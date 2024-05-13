@@ -1,0 +1,87 @@
+// --------------- hex to rgba mixin ---------------
+@function HexToRGB($hex) {
+	@return red($hex), green($hex), blue($hex);
+}
+
+:root {
+	// --------------- default global variable ---------------
+	--frame-width: 1920;
+	--rem-function: calc(100vw / var(--frame-width));
+	--error-bg: #d01f1f;
+	--body-bg: #21242B;
+	--body-font-size: 16rem;
+	--content-width: Max(1440px, 1440rem);
+	--container-offset: clamp(15px, 1.953125vw, 30rem);
+
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+	// --------------- default JS variable ---------------
+	--header-height: 142rem;
+	--team-slider-offset: clamp(15px, 3.90625vw, 40rem);
+
+	@include tablet {
+		--header-height: 112px !important;
+	}
+
+
+	@include tablet {
+		--header-height: 85px !important;
+	}
+
+
+	// --------------- default scroll variable ---------------
+	--scrollbar-thumb: #fff;
+	// --scrollbar-thumb-hover: #00aff0;
+	--scrollbar-track: transparent;
+	--scrollbar-track-hover: transparent;
+	--overlay-bg: rgba(0, 0, 0, 0.5);
+
+	// --------------- default slect variable ---------------
+	--select-inner-bg: #404040;
+	--select-inner-border: #FDFDFD;
+	--select-focus-border: #FDFDFD;
+
+	// --------------- default font-family variable ---------------
+	--font-family: "Inter", sans-serif; // var(--font-family);
+	--font-family2: "Forum", sans-serif; // var(--font-family2);
+	--font-family3: "DitaSweet", sans-serif; // var(--font-family3);
+
+	// --------------- default text color variable ---------------
+	--cl-a: #{HexToRGB(#ffffff)}; // rgba(var(--cl-a),1.0);
+	--cl-b: #{HexToRGB(#000000)}; // rgba(var(--cl-b),1.0);
+	--cl-c: #{HexToRGB(#21242B)}; // rgba(var(--cl-c),1.0);
+	--cl-d: #{HexToRGB(#EE6C3D)}; // rgba(var(--cl-d),1.0);
+	--cl-e: #{HexToRGB(#2B2E36)}; // rgba(var(--cl-e),1.0);
+	--cl-f: #{HexToRGB(#21242B)}; // rgba(var(--cl-f),1.0);
+
+
+
+
+	// --------------- default background color variable ---------------
+	--bg-a: #{HexToRGB(#ffffff)}; // rgba(var(--bg-a),1.0);
+	--bg-b: #{HexToRGB(#000000)}; // rgba(var(--bg-b),1.0);
+	--bg-c: #{HexToRGB(#21242B)}; // rgba(var(--bg-c),1.0);
+	--bg-d: #{HexToRGB(#EE6C3D)}; // rgba(var(--bg-d),1.0);
+	--bg-e: #{HexToRGB(#2B2E36)}; // rgba(var(--bg-e),1.0);
+	--bg-f: #{HexToRGB(#21242B)}; // rgba(var(--bg-f),1.0);
+
+
+
+	--team-slider-gradient: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(33, 36, 43, 1) 76%);
+	// --------------- default border color color variable ---------------
+	--br-a: #EE6C3D; // var(--br-a);
+
+
+	// -------------
+
+	--project-height: clamp(250px, 44.167vw, 530rem);
+	--main-button-height: clamp(55px, 6.417vw, 77rem);
+	--animation-offset: 10%;
+
+	@include small-tablet {
+		--animation-offset: 2%;
+	}
+
+}
+
+

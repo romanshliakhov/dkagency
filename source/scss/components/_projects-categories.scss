@@ -1,0 +1,42 @@
+.projects-categories {
+	display: flex;
+	justify-content: flex-start;
+	width: fit-content;
+	overflow-x: auto;
+	align-items: center;
+	margin-left: calc(var( --container-offset) * -1);
+	margin-right: calc(var( --container-offset) * -1);
+	padding: 0 var( --container-offset);
+	gap: clamp(40px, 5.833vw, 70rem);
+
+	@include mobile {
+		width:  calc(100% + var( --container-offset) * 2);
+		//margin: 0;
+	}
+
+	&__item {
+		flex-shrink: 0;
+	}
+
+	&__btn {
+		color: rgba(var(--cl-a),1.0);
+		font-family: var(--font-family);
+		font-size: clamp(14px, 1.333vw, 16rem);
+		font-style: normal;
+		font-weight: 300;
+		line-height: 100%;
+		text-transform: uppercase;
+		transition: color .4s;
+		flex-shrink: 0;
+
+		@include hover {
+			color: rgba(var(--cl-d),1.0);
+		}
+
+		&.active {
+			pointer-events: none;
+			font-weight: 600;
+			color: rgba(var(--cl-d),1.0);
+		}
+	}
+}

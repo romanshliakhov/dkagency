@@ -1,0 +1,52 @@
+.technologies-list {
+
+  @include for-tablet {
+    margin: 0;
+    height: initial;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: Max(20px, 20rem) clamp( 20px,8.333vw, 100rem);
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .technologies-card {
+    display: flex;
+    width: 100%;
+
+
+
+    @include for-tablet {
+      filter: grayscale(100%);
+      transition: filter .3s;
+
+      &.animate-items {
+        animation: scaleAnimation var(--animate-items) ease-in-out;
+      }
+    }
+
+    img {
+      width: 100%;
+      transition: all .3s;
+    }
+
+    @include hover {
+      filter: grayscale(0);
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

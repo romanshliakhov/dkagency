@@ -1,0 +1,132 @@
+.main-form {
+	display: flex;
+	flex-direction: column;
+	gap: Max(15px, 15rem);
+
+	&__label {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: Max(8px, 8rem);
+
+		input {
+			height: clamp(55px, 6.667vw, 80rem);
+			line-height: 100%;
+			text-indent: Max(20px, 20rem);
+		}
+	}
+
+	&__legend {
+		color: rgba(var(--cl-a),1.0);
+		font-family: var(--font-family);
+		font-size: clamp(14px, 1.667vw, 16rem);
+		font-style: normal;
+		font-weight: 300;
+		line-height: 130%;
+	}
+
+	input, textarea {
+		width: 100%;
+		background-color: rgba(var(--bg-e),1.0);
+
+		color:  rgba(var(--cl-a),1.0);
+		font-family: var(--font-family);
+		font-size: clamp(16px, 2.083vw, 20rem);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 115%;
+		border: Max(1px, 1rem) solid transparent;
+		transition: all .4s;
+
+		&.focus-visible {
+			border-color: var(--br-a);
+		}
+	}
+
+	textarea {
+		padding: Max(20px, 20rem);
+	}
+
+
+	.main-button {
+		margin-left: auto;
+		margin-top: clamp(30px, 4.583vw, 55rem);
+		position: relative;
+
+		@include tablet{
+			@include for-small-tablet {
+				max-width: 100%;
+			}
+		}
+
+		@include small-tablet {
+			margin: clamp(30px, 4.583vw, 55rem) auto 0;
+			max-width: 414px;
+			width: 100%;
+		}
+
+		input {
+			cursor: pointer;
+			position: absolute;
+			inset: 0;
+			background-color: transparent;
+			color: inherit;
+			font-family: inherit;
+			font-size: inherit;
+			font-style: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+			text-transform: uppercase;
+		}
+	}
+
+	.wpcf7 {
+		position: relative;
+		z-index: 1;
+
+		&-spinner {
+			display: none;
+		}
+
+		&-not-valid-tip {
+			bottom: 2px;
+			left: Max(20px, 20rem);
+			position: absolute;
+			opacity: 0;
+			transition: opacity .2s;
+			transition-delay: .2s;
+		}
+
+
+		&-response {
+
+			&-output {
+				display: none;
+				position: absolute;
+			}
+		}
+	}
+}
+
+.form-section__inner-wrapp .loader {
+	pointer-events: none;
+
+	&.loaded {
+		pointer-events: initial;
+
+		.wpcf7-not-valid-tip {
+			opacity: 1;
+		}
+	}
+
+	&:before {
+		z-index: 10;
+		inset: -20px;
+		background-color: transparent;
+		backdrop-filter: blur(3px);
+	}
+
+	&:after {
+		z-index: 15;
+	}
+}

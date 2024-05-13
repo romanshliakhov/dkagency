@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  transition: background-color .3s, box-shadow .3s;
+
+  &__logo {
+    max-width: Max(176px, 176rem);
+    width: 100%;
+    position: relative;
+    z-index: 20;
+
+    * {
+      width: inherit;
+    }
+
+    @include  mobile{
+      max-width: 120px;
+      max-height: 55px;
+      height: 100%;
+    }
+  }
+
+  &__inner {
+    padding: Max(30px, 30rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding .3s;
+  }
+
+  &.bg {
+    background-color: rgba(var(--bg-e),1.0);
+    box-shadow: 0px 10px 42px -4px rgba(0,0,0,0.25);
+
+    .header__inner {
+      padding: Max(15px, 15rem) 0;
+    }
+  }
+
+
+}

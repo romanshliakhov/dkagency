@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="arrow-l" viewBox="0 0 12 22">
+    <path d="M11 0.999806L2 10.8998L11 20.7998" stroke-width="2"/>
+</symbol><symbol id="arrow-r" viewBox="0 0 12 22">
+    <path d="M0.999998 20.8L10 10.9L0.999999 1" stroke-width="2"/>
+</symbol><symbol id="arrow-up-right" viewBox="0 0 20 20">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.6629 5.9375C5.6629 5.41973 6.08264 5 6.6004 5H14.1134C14.6312 5 15.0509 5.41973 15.0509 5.9375V13.4505C15.0509 13.9683 14.6312 14.388 14.1134 14.388C13.5956 14.388 13.1759 13.9683 13.1759 13.4505V8.20083L6.6004 14.7763C6.23429 15.1425 5.6407 15.1425 5.27458 14.7763C4.90846 14.4102 4.90846 13.8166 5.27458 13.4505L11.8501 6.875H6.6004C6.08264 6.875 5.6629 6.45527 5.6629 5.9375Z"/>
+</symbol><symbol id="close" viewBox="0 0 16 16">
+<g id="Icon/Cancel">
+<path id="Cancel" fill-rule="evenodd" clip-rule="evenodd" d="M11.5286 3.52876C11.7889 3.26841 12.2111 3.26841 12.4714 3.52876C12.7317 3.78911 12.7317 4.21122 12.4714 4.47157L8.9428 8.00016L12.4714 11.5288C12.7317 11.7891 12.7317 12.2112 12.4714 12.4716C12.2111 12.7319 11.7889 12.7319 11.5286 12.4716L8 8.94297L4.4714 12.4716C4.21105 12.7319 3.78894 12.7319 3.52859 12.4716C3.26824 12.2112 3.26824 11.7891 3.52859 11.5288L7.05719 8.00016L3.52859 4.47157C3.26824 4.21122 3.26824 3.78911 3.52859 3.52876C3.78894 3.26841 4.21105 3.26841 4.4714 3.52876L8 7.05735L11.5286 3.52876Z"/>
+</g>
+</symbol><symbol id="error" viewBox="0 0 50 50">
+<circle style="fill:#D75A4A;" cx="25" cy="25" r="25"/>
+<polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,34 25,25 34,16 
+	"/>
+<polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,16 25,25 34,34 
+	"/>
+</symbol><symbol id="success" viewBox="0 0 50 50">
+<circle style="fill:#25AE88;" cx="25" cy="25" r="25"/>
+<polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+	38,15 22,33 12,25 "/>
+</symbol></svg>

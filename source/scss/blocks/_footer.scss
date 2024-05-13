@@ -1,0 +1,97 @@
+.footer {
+    padding: clamp(60px, 6.667vw, 80rem) 0 clamp(30px, 6.667vw, 80rem);
+    overflow: hidden;
+    background-color: rgba(var(--bg-e), 1);
+
+
+    &__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 40px clamp(50px, 10vw, 178rem);
+
+        @include  mobile {
+            grid-template-columns: 1fr 1fr;
+            align-items: flex-start;
+            max-width: 80%;
+            gap: 80px clamp(50px, 10vw, 178rem);
+        }
+    }
+
+    &__logo {
+        max-width: Max(100px, 100rem);
+        width: 100%;
+        display: flex;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: Max(10px, 10rem);
+
+        @include for-mobile {
+            align-items: flex-end;
+        }
+
+        @include mobile {
+            grid-column: 1/-1;
+        }
+
+        span {
+            color: rgba(var(--cl-a),1.0);
+            text-align: center;
+            font-family: var(--font-family);
+            font-size: Max(16px, 16rem);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+
+        &-link {
+            color: rgba(var(--cl-a),1.0);
+            text-align: center;
+            font-family: var(--font-family);
+            font-size: Max(15px, 15rem);
+            font-style: normal;
+            font-weight: 300;
+            line-height: 100%;
+            text-transform: uppercase;
+            transition: all .4s;
+
+            &:hover {
+                color: rgba(var(--cl-d),1.0);
+            }
+        }
+    }
+
+    .main-nav {
+
+        &__list {
+            flex-direction: column;
+            gap: Max(10px, 10rem);
+            align-items: flex-start;
+        }
+
+        a {
+            font-size: Max(16px, 16rem);
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+
+    .trigger {
+        @include  mobile {
+            left: initial;
+            top: 40%;
+            right: -25%;
+        }
+    }
+}
