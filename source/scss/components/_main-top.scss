@@ -1,46 +1,48 @@
 .main-top {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  gap: Max(50px, 50rem);
+  gap: Max(30px, 30rem);
 
   &__title {
-    color: rgba(var(--cl-a),1.0);
-    font-family: var(--font-family);
-    font-size: clamp(55px, 5vw, 90rem);
+    color: rgba(var(--cl-e),1.0);
+    font-family: var(--font-family-inter);
+    font-size: 35px;
     font-style: normal;
     font-weight: 700;
-    line-height: 140%;
+    line-height: 110%;
     position: relative;
     width: fit-content;
 
-    @include mobile{
-      font-size: clamp(50px, 8.454vw, 55px);
-      line-height: 120%;
-    }
+    // @include mobile{
+    //   font-size: clamp(50px, 8.454vw, 55px);
+    //   line-height: 120%;
+    // }
 
-    &:before {
-      height: Max(3px, 3rem);
-      position: absolute;
-      left: 0;
-      width: 60%;
-      bottom: 0;
-      content: '';
-      background-color: var(--br-a);
+    // &:before {
+    //   height: Max(3px, 3rem);
+    //   position: absolute;
+    //   left: 0;
+    //   width: 60%;
+    //   bottom: 0;
+    //   content: '';
+    //   background-color: var(--br-a);
 
-      @include mobile{
-        bottom: -10px;
-      }
-    }
+    //   @include mobile{
+    //     bottom: -10px;
+    //   }
+    // }
   }
 
-  &__text * {
-    color: rgba(var(--cl-a),1.0);
-    font-family: var(--font-family2);
-    font-size: clamp(18px, 1.667vw, 20rem);
+  &__text {
+    max-width: 836px;
+    color: rgba(var(--cl-d),1.0);
+    font-family: var(--font-family-inter);
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+    font-weight: 500;
+    line-height: 110%;
+    text-align: center;
   }
 
 }

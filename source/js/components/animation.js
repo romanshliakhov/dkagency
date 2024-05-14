@@ -79,8 +79,4 @@ document.addEventListener('DOMContentLoaded', function() {
   initParallaxEffect('.form-section__bg');
   initParallaxEffect('.about-section__bg');
 
-  upBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
 });

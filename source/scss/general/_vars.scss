@@ -50,6 +50,8 @@
 	--cl-b: #{HexToRGB(#000000)}; // rgba(var(--cl-b),1.0);
 	--cl-c: #{HexToRGB(#d5d5cd)}; // rgba(var(--cl-c),1.0);
 	--cl-d: #{HexToRGB(#001325)}; // rgba(var(--cl-d),1.0);
+	--cl-e: #{HexToRGB(#0e2943)}; // rgba(var(--cl-e),1.0);
+	--cl-f: #{HexToRGB(#dcdcb7)}; // rgba(var(--cl-f),1.0);
 	
 
 
@@ -62,9 +64,11 @@
 	--bg-c: #{HexToRGB(#0e2943)}; // rgba(var(--bg-c),1.0);
 
 
+	// --------------- default gradient variable ---------------
+	--services-gradient: linear-gradient(135deg, #234842 0%, #005a4b 100%); // var(--services-gradient);
 
 
-	--team-slider-gradient: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgba(33, 36, 43, 1) 76%);
+
 	// --------------- default border color color variable ---------------
 	--br-a: #EE6C3D; // var(--br-a);
 
