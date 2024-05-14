@@ -8,7 +8,7 @@ html {
 
 body {
   position: relative;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   width: 100%;
   // min-height: -webkit-fill-available;
   margin: 0;
@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   font-size: Max(16px, 16rem);
   line-height: normal;
-  font-family: var(--font-family);
+  font-family: var(--font-family-inter);
   color: rgba(var(--cl-a),1.0);
 
   background-color: var(--body-bg);
@@ -30,12 +30,6 @@ body {
     width: 100%;
     overflow: hidden;
     // disable scroll
-  }
-
-  &.admin-bar {
-    header {
-      top: 32px;
-    }
   }
 }
 
@@ -55,9 +49,9 @@ main {
   box-sizing: border-box;
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+// * {
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
 
 
 a {
@@ -232,33 +226,6 @@ fieldset {
 
 .overlay {
   @include overlay;
-}
-
-* {
-  &::-webkit-scrollbar {
-    width: Max(8px, 8rem);
-    cursor: pointer;
-
-    @include small-tablet {
-      display: none;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-track);
-  }
-
-  &::-webkit-scrollbar-button {
-    display: none;
-    background-color: transparent;
-    box-shadow: none;
-  }
 }
 
 [data-btn-modal] {

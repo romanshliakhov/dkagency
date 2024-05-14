@@ -3,17 +3,16 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: Max(30px, 30rem) clamp(30px, 3.90625vw, 60rem);
+    gap: 52px;
   }
 
   a {
     color: rgba(var(--cl-a),1.0);
     font-family: var(--font-family);
-    font-size: Max(14px,14rem);
+    font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 100%;
-    text-transform: uppercase;
     transition: color .3s;
 
     @include tablet {
@@ -34,22 +33,10 @@
       }
     }
 
-
     @include for-tablet {
       @include hover {
-        color: rgba(var(--cl-d),1.0);
+        color: rgba(var(--cl-c),1.0);
       }
     }
-
-    &.active {
-      color: rgba(var(--cl-d),1.0);
-
-      @include tablet {
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
-
   }
 }
