@@ -7,9 +7,6 @@
     $aside_descr = get_sub_field( 'aside_descr' );
 
     $service_row = have_rows('services-section__list');
-    
-
-    
 ?>
 
 <section class="services-section" id="services">
