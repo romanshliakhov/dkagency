@@ -1,0 +1,32 @@
+.portfolio-section {
+    padding: 50px 0 60px;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .main-top__title {
+        color: rgba(var(--cl-a),1.0);
+    }
+
+    .main-top__text {
+        font-weight: 400;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    &__item {
+        display: flex;
+        
+        picture,
+        img {
+            border-radius: 10px;
+        }
+    }
+}
