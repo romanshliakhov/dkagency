@@ -14,7 +14,7 @@
 }
 @font-face {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-family: "Inter";
   font-display: swap;
   src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
@@ -25,6 +25,13 @@
   font-family: "Inter";
   font-display: swap;
   src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Inter";
+  font-display: swap;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
 }
 /* stylelint-disable */
 /* stylelint-disable */
@@ -3128,6 +3135,63 @@ fieldset {
 }
 .process-section__lists-descr {
   color: rgba(var(--cl-a), 1);
+  font-family: var(--font-family-inter);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162%;
+}
+
+.reasons-section {
+  padding: 50px 0 60px;
+}
+.reasons-section__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 50px;
+}
+.reasons-section .main-top__title {
+  color: rgba(var(--cl-a), 1);
+}
+.reasons-section .main-top__text {
+  font-weight: 400;
+}
+.reasons-section__lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px 120px;
+  padding: 0 90px;
+}
+.reasons-section__lists-row {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.reasons-section__lists-heading {
+  color: rgba(var(--cl-d), 1);
+  font-family: var(--font-family-inter);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+}
+.reasons-section__lists-descr {
+  color: rgba(var(--cl-d), 1);
   font-family: var(--font-family-inter);
   font-size: 16px;
   font-style: normal;
