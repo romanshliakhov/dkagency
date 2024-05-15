@@ -1,12 +1,12 @@
 .services-section {
     position: relative;
-    padding: 90px 0;
+    padding: clamp(50px, 6.25vw, 90px) 0;
     background-color: rgba(var(--bg-a),1.0);
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 100px;
+        gap: clamp(40px, 13.021vw, 100px);
     }
 
     .main-top__text {
@@ -25,6 +25,10 @@
             background-repeat: no-repeat;
             width: 20px;
             height: 30px;
+
+            @include small-tablet {
+                display: none;
+            }
         }
     }
 
@@ -32,23 +36,42 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
+
+        @include tablet {
+            gap: 40px;
+        }
+
+        @include small-tablet {
+            flex-direction: column;
+        }
     }
 
     &__aside {
         position: sticky;
         top: 0;
         flex-basis: 50%;
-        padding-top: 200px;
+        padding-top: clamp(150px, 11.806vw, 200px);
         display: flex;
         flex-direction: column;
         gap: 25px;
+
+        @include tablet {
+            flex-basis: 40%;
+        }
+
+        @include small-tablet {
+            position: relative;
+            top: initial;
+            flex-basis: initial;
+            padding-top: 0;
+            text-align: center;
+        }
         
         &-heading {
             max-width: 590px;
             color: rgba(var(--cl-e),1.0);
             font-family: var(--font-family-inter);
-            font-size: 25px;
-            font-style: normal;
+            font-size: clamp(20px, 1.736vw, 25px);
             font-weight: 700;
             line-height: 110%;
         }
@@ -57,8 +80,7 @@
             max-width: 545px;
             color: rgba(var(--cl-d),1.0);
             font-family: var(--font-family-inter);
-            font-size: Max(16px, 16rem);
-            font-style: normal;
+            font-size: clamp(14px, 1.111vw, 16px);
             font-weight: 600;
             line-height: 110%;
         }
@@ -70,19 +92,33 @@
         flex-direction: column;
         gap: 20px;
 
+        @include tablet {
+            flex-basis: 60%;
+        }
+
+        @include small-tablet {
+            flex-basis: initial;
+        }
+
 
         &-row {
-            padding: 67px 34px 67px 40px;
+            padding: clamp(40px, 5.278vw, 67px) clamp(30px, 2.361vw, 34px) clamp(40px, 5.278vw, 67px) clamp(30px, 2.778vw, 40px);
             background: var(--services-gradient);
             border-radius: 10px;
             display: grid;
-            grid-template-columns: 144px 1fr;
+            grid-template-columns: clamp(100px, 10vw, 144px) 1fr;
             align-items: center;
-            grid-gap: 31px;
+            grid-gap: clamp(20px, 2.153vw, 31px);
+
+            @include small-tablet {
+                grid-template-columns: 100%;
+                text-align: center;
+            }
         }
 
         &-icon {
             display: flex;
+            justify-content: center;
         }
 
         &-info {
@@ -95,7 +131,6 @@
             color: rgba(var(--cl-f),1.0);
             font-family: var(--font-family-inter);
             font-size: 20px;
-            font-style: normal;
             font-weight: 600;
             line-height: 110%;
         }
@@ -103,8 +138,7 @@
         &-descr {
             color: rgba(var(--cl-a),1.0);
             font-family: var(--font-family-inter);
-            font-size: 16px;
-            font-style: normal;
+            font-size: clamp(14px, 1.111vw, 16px);
             font-weight: 400;
             line-height: 162%;
         }

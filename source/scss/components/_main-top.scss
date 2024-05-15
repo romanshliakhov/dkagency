@@ -61,7 +61,7 @@
     max-width: 980px;
     color: rgba(var(--cl-d),1.0);
     font-family: var(--font-family-inter);
-    font-size: 16px;
+    font-size: clamp(14px, 1.111vw, 16px);
     font-style: normal;
     font-weight: 400;
     line-height: 110%;

@@ -24,7 +24,7 @@ $footer__logo = get_field( 'logo', 'options' );
                 ) ); ?>
             </div>
 
-            <a class="footer__btn btn" href="#">Order site</a>
+            <a class="footer__btn btn" href="<?php echo home_url(); ?>/contacts">Order site</a>
         </div>
     </div>
     

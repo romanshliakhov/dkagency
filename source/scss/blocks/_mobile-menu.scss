@@ -38,13 +38,6 @@
 			}
 		}
 	}
-
-	@include for-tablet {
-		.lang-list {
-			display: none;
-		}
-	}
-
 }
 
 .burger {

@@ -16,24 +16,18 @@
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
 	// --------------- default JS variable ---------------
-	--header-height: 142rem;
-	--team-slider-offset: clamp(15px, 3.90625vw, 40rem);
+	// --header-height: 142rem;
+	// --team-slider-offset: clamp(15px, 3.90625vw, 40rem);
 
-	@include tablet {
-		--header-height: 112px !important;
-	}
-
-
-	@include tablet {
-		--header-height: 85px !important;
-	}
+	// @include tablet {
+	// 	--header-height: 112px !important;
+	// }
 
 
-	// --------------- default scroll variable ---------------
-	// --scrollbar-thumb: #fff;
-	// --scrollbar-thumb-hover: #00aff0;
-	// --scrollbar-track: transparent;
-	// --scrollbar-track-hover: transparent;
+	// @include tablet {
+	// 	--header-height: 85px !important;
+	// }
+
 	--overlay-bg: rgba(0, 0, 0, 0.5);
 
 	// --------------- default slect variable ---------------
@@ -70,15 +64,7 @@
 	--slider-left-gradient: linear-gradient(271deg, rgba(153, 153, 153, 0) 0%, #d5d5cd 100%); // var(--slider-left-gradient);
 	--slider-right-gradient: linear-gradient(270deg, #d5d5cd 0%, rgba(153, 153, 153, 0) 100%); // var(--slider-right-gradient);
 
-
-	// --------------- default border color color variable ---------------
-	--br-a: #EE6C3D; // var(--br-a);
-
-
-	// -------------
-
-	--project-height: clamp(250px, 44.167vw, 530rem);
-	--main-button-height: 43px;
+	// --------------- animations ---------------
 	--animation-offset: 10%;
 
 	@include small-tablet {

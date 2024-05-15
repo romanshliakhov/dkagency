@@ -1,5 +1,5 @@
 .process-section {
-    padding: 90px 0;
+    padding: clamp(50px, 6.25vw, 90px) 0;
     background-color: rgba(var(--bg-a),1.0);
 
     &__inner {
@@ -13,9 +13,16 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
 
+        @include laptop {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small-tablet {
+            grid-template-columns: 100%;
+        }
 
         &-row {
-            padding: 30px 34px 35px;
+            padding: 30px clamp(20px, 2.361vw, 34px) clamp(30px, 2.431vw, 35px);
             background: var(--services-gradient);
             border-radius: 10px;
             display: flex;
@@ -43,7 +50,7 @@
         &-descr {
             color: rgba(var(--cl-a),1.0);
             font-family: var(--font-family-inter);
-            font-size: 16px;
+            font-size: clamp(14px, 1.111vw, 16px);
             font-style: normal;
             font-weight: 400;
             line-height: 162%;

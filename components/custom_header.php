@@ -21,7 +21,7 @@ $header_logo = get_field( 'logo', 'options' );
 	            ) ); ?>
             </div>
 
-			<a class="header__btn btn" href="#">Contact Us</a>
+			<a class="header__btn btn" href="#contacts">Contact Us</a>
 
             <button class="burger" type="button">
                 <span class="burger__line"></span>

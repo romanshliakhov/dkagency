@@ -3,7 +3,7 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: 52px;
+    gap: clamp(40px, 4.194vw, 52px);
   }
 
   a {

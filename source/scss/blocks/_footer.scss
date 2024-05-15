@@ -4,17 +4,16 @@
 
 
     &__inner {
-        padding: 40px 0;
+        padding: clamp(20px, 2.778vw, 40px) 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        // @include  mobile {
-        //     grid-template-columns: 1fr 1fr;
-        //     align-items: flex-start;
-        //     max-width: 80%;
-        //     gap: 80px clamp(50px, 10vw, 178rem);
-        // }
+        @include small-tablet {
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
     }
 
     &__logo {
@@ -30,10 +29,29 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+
+        @include laptop {
+            position: relative;
+            left: initial;
+            transform: initial;
+        }
+
+        @include small-tablet {
+            order: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .main-nav__list {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
     }
 
-      &__btn {
-        height: 55px;
+    &__btn {
+        height: clamp(43px, 7.161vw, 55px);
+        max-width: clamp(150px, 16.389vw, 236px);
     }
 
     &__copyright {

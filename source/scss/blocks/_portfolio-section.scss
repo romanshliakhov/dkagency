@@ -1,5 +1,5 @@
 .portfolio-section {
-    padding: 50px 0 60px;
+    padding: 50px 0 clamp(50px, 4.167vw, 60px);
 
     &__inner {
         display: flex;
@@ -19,6 +19,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
+
+        @include small-tablet {
+            grid-template-columns: 100%;
+        }
     }
 
     &__item {
