@@ -1,0 +1,86 @@
+.pricing-section {
+    padding: 90px 0;
+    background-color: rgba(var(--bg-a),1.0);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        &-descr {
+            color: rgba(var(--cl-a),1.0);
+            font-family: var(--font-family-inter);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 162%;
+        }
+    }
+
+    &__service {
+        padding: 50px 55px 50px 64px;
+        background-color: rgba(var(--bg-d),1.0);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &-heading {
+            display: block;
+            margin-bottom: 30px;
+            color: rgba(var(--cl-a),1.0);
+            font-family: var(--font-family-inter);
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 110%;
+        }
+
+        &-price {
+            display: block;
+            margin-bottom: 35px;
+            color: rgba(var(--cl-f),1.0);
+            font-family: var(--font-family-inter);
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%;
+        }
+
+        &-btn {
+            margin-bottom: 45px;
+        }
+
+        &-advantages {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        &-advantage {
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: var(--pricing-checkbox);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                left: 0;
+                width: 20px;
+                height: 21px;
+            }
+        }
+    }
+}
