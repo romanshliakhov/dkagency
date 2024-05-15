@@ -5,23 +5,20 @@ export default {
   documentEl: document,
   htmlEl: document.documentElement,
   bodyEl: document.body,
-  preloaderBox: document.querySelector('.preloader'),
 
   header: document.querySelector("header"),
   burger: document.querySelectorAll('.burger'),
   mobileMenu: document.querySelector('.menu-drawer'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
-  teamSections: document.querySelectorAll('.team-section'),
+
   formWrapper: document.querySelector( '.wpcf7' ),
-  technologiesItems: document.querySelectorAll('.technologies-list__item .technologies-card'),
-  bricksItems: document.querySelectorAll('.bricks li'),
-  upBtn: document.querySelector('.to-top'),
   formSubmitBtn: document.querySelector('.wpcf7-submit'),
+
   observerSections: document.querySelectorAll('section[id]'),
   overlay: document.querySelector('[data-overlay]'),
   modals: [...document.querySelectorAll('[data-popup]')],
-  technologiesSlider: document.querySelector('.technologies-section .swiper-container'),
-  projectSliders: document.querySelectorAll('.project-slider')
+
+  marqueeSlider: document.querySelector('.marquee-section .swiper-container'),
 }
 
 

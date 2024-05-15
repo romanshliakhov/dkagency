@@ -1,18 +1,17 @@
 @import "../blocks/header.scss";
 @import "../blocks/footer.scss";
-@import "../blocks/hero-section.scss";
 
+// Sections blocks
+@import "../blocks/hero-section.scss";
+@import "../blocks/marquee-section.scss";
 @import "../blocks/services-section.scss";
 @import "../blocks/portfolio-section.scss";
 @import "../blocks/process-section.scss";
 @import "../blocks/reasons-section.scss";
 @import "../blocks/pricing-section.scss";
+@import "../blocks/contacts-section.scss";
 
-@import "../blocks/about-section.scss";
-@import "../blocks/technologies-section.scss";
-@import "../blocks/team-section.scss";
-@import "../blocks/projects-section.scss";
-@import "../blocks/form-section.scss";
-@import "../blocks/single-project.scss";
+
+// Extra
 @import "../blocks/mobile-menu.scss";
 @import "../blocks/modals.scss";

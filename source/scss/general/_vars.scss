@@ -67,7 +67,8 @@
 
 	// --------------- default gradient variable ---------------
 	--services-gradient: linear-gradient(135deg, #234842 0%, #005a4b 100%); // var(--services-gradient);
-
+	--slider-left-gradient: linear-gradient(271deg, rgba(153, 153, 153, 0) 0%, #d5d5cd 100%); // var(--slider-left-gradient);
+	--slider-right-gradient: linear-gradient(270deg, #d5d5cd 0%, rgba(153, 153, 153, 0) 100%); // var(--slider-right-gradient);
 
 
 	// --------------- default border color color variable ---------------
