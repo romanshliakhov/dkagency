@@ -15,6 +15,7 @@
   background-color: transparent;
   flex-shrink: 0;
   cursor: pointer;
+  z-index: 20;
 
   &::before,
   &::after {

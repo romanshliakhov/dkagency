@@ -1,5 +1,6 @@
 .header {
   // position: fixed;
+  position: relative;
   z-index: 100;
   // left: 0;
   // right: 0;
@@ -17,7 +18,7 @@
   }
 
   &__inner {
-    padding: 19px 60px;
+    padding: 19px clamp(20px, 4.167vw, 60px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,10 +28,47 @@
     border-radius: 20px;
   }
 
-  &__menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  &__menu {    
+    @include for-tablet {
+      display: contents;
+
+      .main-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      opacity: 0;
+      transition: transform .4s ease-out , opacity .4s ease-out;
+
+      .main-nav__list {
+				align-items: flex-start;
+				flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        a {
+          @include tablet {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    &.active {
+			opacity: 1;
+			transform: translateX(0%);
+		}
   }
 
   // &.bg {

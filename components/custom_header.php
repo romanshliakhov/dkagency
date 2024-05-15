@@ -19,10 +19,10 @@ $header_logo = get_field( 'logo', 'options' );
 		            'container_class' => 'main-nav',
 		            'menu_class' => 'main-nav__list',
 	            ) ); ?>
+
+                <a class="header__btn btn" href="#contacts">Contact Us</a>
             </div>
-
-			<a class="header__btn btn" href="#contacts">Contact Us</a>
-
+            
             <button class="burger" type="button">
                 <span class="burger__line"></span>
             </button>
@@ -32,14 +32,3 @@ $header_logo = get_field( 'logo', 'options' );
 
 
 
-<!-- <?php if ( $link ) :
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
-    <a class="main-button" href="<?php echo esc_url( $link_url ); ?>"
-        target="<?php echo esc_attr( $link_target ); ?>"
-        data-aos="fade-up" data-aos-delay="300">
-        <?php echo esc_html( $link_title ); ?>
-    </a>
-<?php endif; ?> -->

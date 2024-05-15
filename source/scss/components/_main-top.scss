@@ -37,24 +37,12 @@
       height: 1px;
     }
 
-    // @include mobile{
-    //   font-size: clamp(50px, 8.454vw, 55px);
-    //   line-height: 120%;
-    // }
-
-    // &:before {
-    //   height: Max(3px, 3rem);
-    //   position: absolute;
-    //   left: 0;
-    //   width: 60%;
-    //   bottom: 0;
-    //   content: '';
-    //   background-color: var(--br-a);
-
-    //   @include mobile{
-    //     bottom: -10px;
-    //   }
-    // }
+    @include mobile{
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__text {

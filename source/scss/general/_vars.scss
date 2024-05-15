@@ -64,7 +64,11 @@
 	--slider-left-gradient: linear-gradient(271deg, rgba(153, 153, 153, 0) 0%, #d5d5cd 100%); // var(--slider-left-gradient);
 	--slider-right-gradient: linear-gradient(270deg, #d5d5cd 0%, rgba(153, 153, 153, 0) 100%); // var(--slider-right-gradient);
 
-	// --------------- animations ---------------
+
+
+
+	// -------------
+	--main-button-height: 43px;
 	--animation-offset: 10%;
 
 	@include small-tablet {

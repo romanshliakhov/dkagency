@@ -8,7 +8,8 @@ export default {
 
   header: document.querySelector("header"),
   burger: document.querySelectorAll('.burger'),
-  mobileMenu: document.querySelector('.menu-drawer'),
+  // mobileMenu: document.querySelector('.menu-drawer'),
+  mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
 
   formWrapper: document.querySelector( '.wpcf7' ),
