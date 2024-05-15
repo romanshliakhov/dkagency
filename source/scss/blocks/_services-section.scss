@@ -1,4 +1,5 @@
 .services-section {
+    position: relative;
     padding: 90px 0;
     background-color: rgba(var(--bg-a),1.0);
 
@@ -8,14 +9,36 @@
         gap: 100px;
     }
 
+    .main-top__text {
+        position: relative;
+        max-width: 836px;
+        font-weight: 500;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: calc(50% + 35px);
+            bottom: -65px;
+            background-image: var(--services-title-icon);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 30px;
+        }
+    }
+
     &__wrapp {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-        align-items: stretch;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
     }
 
     &__aside {
+        position: sticky;
+        top: 0;
+        flex-basis: 50%;
+        padding-top: 200px;
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -42,6 +65,7 @@
     }
 
     &__lists {
+        flex-basis: 50%;
         display: flex;
         flex-direction: column;
         gap: 20px;

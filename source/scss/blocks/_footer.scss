@@ -26,6 +26,16 @@
         }
     }
 
+    &__menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+      &__btn {
+        height: 55px;
+    }
+
     &__copyright {
         display: block;
         color: rgba(var(--cl-c),1.0);
@@ -35,9 +45,5 @@
         font-weight: 400;
         line-height: 100%;
         text-align: center;
-    }
-
-    &__btn {
-        height: 55px;
     }
 }

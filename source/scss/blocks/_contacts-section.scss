@@ -1,8 +1,7 @@
 .form-section {
-	padding: clamp(60px, 10vw ,198rem) 0 Max(60px, 62rem);
+	padding: 70px 0;
 	z-index: 1;
 	position: relative;
-	overflow: hidden;
 
 	&__bg {
 		position: absolute;
@@ -54,34 +53,31 @@
 		}
 	}
 
-	.main-form {
+	// .main-form {
+	// 	@include small-tablet {
+	// 		max-width: 576px;
+	// 		margin: 0 auto;
+	// 	}
+	// }
 
+	// .main-top {
+	// 	@include small-tablet  {
+	// 		@include for-mobile {
+	// 			text-align: center;
+	// 		}
 
+	// 	}
 
-		@include small-tablet {
-			max-width: 576px;
-			margin: 0 auto;
-		}
-	}
+	// 	&__title {
+	// 		&:before {
+	// 			max-width: Max(140px, 140rem);
+	// 		}
 
-	.main-top {
-		@include small-tablet  {
-			@include for-mobile {
-				text-align: center;
-			}
-
-		}
-
-		&__title {
-			&:before {
-				max-width: Max(140px, 140rem);
-			}
-
-			@include small-tablet {
-				@include for-mobile {
-					margin: 0 auto;
-				}
-			}
-		}
-	}
+	// 		@include small-tablet {
+	// 			@include for-mobile {
+	// 				margin: 0 auto;
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

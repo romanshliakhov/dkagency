@@ -5,6 +5,7 @@
   gap: Max(30px, 30rem);
 
   &__title {
+    position: relative;
     color: rgba(var(--cl-e),1.0);
     font-family: var(--font-family-inter);
     font-size: 35px;
@@ -13,6 +14,28 @@
     line-height: 110%;
     position: relative;
     width: fit-content;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: var(--title-line);
+      left: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 109px;
+      height: 1px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: var(--title-line);
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 109px;
+      height: 1px;
+    }
 
     // @include mobile{
     //   font-size: clamp(50px, 8.454vw, 55px);
@@ -35,14 +58,13 @@
   }
 
   &__text {
-    max-width: 836px;
+    max-width: 980px;
     color: rgba(var(--cl-d),1.0);
     font-family: var(--font-family-inter);
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 110%;
     text-align: center;
   }
-
 }

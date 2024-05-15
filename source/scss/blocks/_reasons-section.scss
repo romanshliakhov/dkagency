@@ -11,23 +11,31 @@
         color: rgba(var(--cl-a),1.0);
     }
 
-    .main-top__text {
-        font-weight: 400;
-    }
-
     &__lists {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 50px 120px;
-        padding: 0 90px;
+        padding: 0 100px;
 
         &-row {
+            position: relative;
             padding-top: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
             text-align: center;
+            counter-increment: list;
+
+            &::before {
+                content: counter(list);
+                position: absolute;
+                top: 0;
+                font-weight: 800;
+                font-size:  100px;
+                line-height: 100%;
+                color: rgba(var(--cl-a),0.4);
+            }
 
         }
 

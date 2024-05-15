@@ -14,13 +14,20 @@
                     <?php while (have_rows('service')) : the_row(); 
                         $service_title = get_sub_field( 'service_title' );
                         $service_price = get_sub_field( 'service_price' );
+                        $per_month = get_sub_field('per_month');
                         ?>
                         
                         <li class="pricing-section__service">
                             <span class="pricing-section__service-heading"><?php echo $service_title ?></span>
 
                             <div class="pricing-section__service-price">
-                                from <?php echo $service_price ?>
+                                from 
+                                
+                                <?php echo $service_price ?> 
+
+                                <?php if($per_month) : ?>
+                                    <span>per month</span>
+                                <?php endif; ?>
                             </div>
 
                             <a class="pricing-section__service-btn btn" href="#">Order site</a>
