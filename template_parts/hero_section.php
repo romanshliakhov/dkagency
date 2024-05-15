@@ -1,14 +1,13 @@
 <?php
     $build_folder = get_template_directory_uri() . '/assets/';
-    $video = get_sub_field( 'background_video' );
+    $video = get_sub_field( 'video' );
 ?>
 
 <section class="hero-section">
 	<?php if ( $video ) : ?>
-        <div class="hero-section__video">
-            <img src="<?php echo esc_url( $bg['url'] ); ?>"
-                 alt="<?php echo esc_attr( $bg['alt'] ); ?>" />
-        </div>
+        <video class="hero-section__video" autoplay muted loop playsinline preload="auto">
+            <source src="<?php echo $video['url']; ?>" type="<?php echo $video['mime_type']; ?>">
+        </video>
 	<?php endif; ?>
 </section>
 

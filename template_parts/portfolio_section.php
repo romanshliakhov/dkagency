@@ -1,5 +1,4 @@
 <?php
-    $build_folder = get_template_directory_uri() . '/assets/';
     $title = get_sub_field( 'title' );
     $descr = get_sub_field( 'descr' );
 ?>

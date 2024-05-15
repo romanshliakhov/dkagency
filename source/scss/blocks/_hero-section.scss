@@ -1,81 +1,17 @@
 .hero-section {
-    background-position: left center;
-    background-size: 50%;
-    background-repeat: no-repeat;
     position: relative;
+    height: 60svh;
+    width: 100%;
     overflow: hidden;
 
-    &__bg {
-        position: absolute;
-        right: 50%;
-        height: 100%;
-        width: 50vw;
-        overflow: hidden;
-
-        @include tablet {
-            right: 0;
-            left: 0;
-            width: initial;
-        }
-
-        img {
-            height: 120%;
-            width: 120%;
-            top: -2%;
-            object-position: right;
-            z-index: 1;
-            display: flex;
-            position: absolute;
-            transition: transform .3s ease-out;
-
-
-            @include tablet {
-                transform: none !important;
-            }
-        }
-
-        &:before {
-            z-index: 2;
-            bottom: -10px;
-            left: 0;
-            right: 0;
-            height: 30%;
-            position: inherit;
-            content: '';
-            background: linear-gradient(to top, var(--body-bg), transparent);
-
-            @include tablet {
-                height: 100%;
-            }
-        }
+    @include for-tablet {
+        height: 100svh;
     }
 
-
-    &__inner {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: Max(25px,25rem);
-
-
-        @include for-tablet {
-            padding: Max(100px, 100rem) 0 Max(100px, 100rem) clamp(40px ,7.5vw, 90rem);
-            min-height: calc(100vh - var(--header-height));
-            margin-left: auto;
-            max-width: 50%;
-        }
-
-        @include tablet {
-            padding: clamp(150px, 24.414vw, 250px) 0 50px;
-            max-width: 80%;
-            margin: 0 auto;
-        }
-
-        @include mobile {
-            max-width: 100%;
-        }
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 

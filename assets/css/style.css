@@ -907,7 +907,9 @@ fieldset {
 }
 
 .header {
-  position: relative;
+  position: absolute;
+  top: 3px;
+  width: 100%;
   z-index: 100;
 }
 .header__logo {
@@ -1085,99 +1087,21 @@ fieldset {
 }
 
 .hero-section {
-  background-position: left center;
-  background-size: 50%;
-  background-repeat: no-repeat;
   position: relative;
+  height: 60svh;
+  width: 100%;
   overflow: hidden;
-}
-.hero-section__bg {
-  position: absolute;
-  right: 50%;
-  height: 100%;
-  width: 50vw;
-  overflow: hidden;
-}
-@media (max-width: 1024px) {
-  .hero-section__bg {
-    right: 0;
-    left: 0;
-    width: initial;
-  }
-}
-.hero-section__bg img {
-  height: 120%;
-  width: 120%;
-  top: -2%;
-  -o-object-position: right;
-  object-position: right;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-}
-@media (max-width: 1024px) {
-  .hero-section__bg img {
-    -webkit-transform: none !important;
-    -ms-transform: none !important;
-    transform: none !important;
-  }
-}
-.hero-section__bg:before {
-  z-index: 2;
-  bottom: -10px;
-  left: 0;
-  right: 0;
-  height: 30%;
-  position: inherit;
-  content: "";
-  background: -webkit-gradient(linear, left bottom, left top, from(var(--body-bg)), to(transparent));
-  background: linear-gradient(to top, var(--body-bg), transparent);
-}
-@media (max-width: 1024px) {
-  .hero-section__bg:before {
-    height: 100%;
-  }
-}
-.hero-section__inner {
-  position: relative;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  gap: max(25px, 25rem);
 }
 @media (min-width: 1025px) {
-  .hero-section__inner {
-    padding: max(100px, 100rem) 0 max(100px, 100rem) clamp(40px, 7.5vw, 90rem);
-    min-height: calc(100vh - var(--header-height));
-    margin-left: auto;
-    max-width: 50%;
+  .hero-section {
+    height: 100svh;
   }
 }
-@media (max-width: 1024px) {
-  .hero-section__inner {
-    padding: clamp(150px, 24.414vw, 250px) 0 50px;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 576px) {
-  .hero-section__inner {
-    max-width: 100%;
-  }
+.hero-section__video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .marquee-section {

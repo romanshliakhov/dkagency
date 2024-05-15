@@ -1,5 +1,4 @@
 <?php
-    $build_folder = get_template_directory_uri() . '/assets/build/';
     $project_slider = get_sub_field("works_slider");
 ?>
 
