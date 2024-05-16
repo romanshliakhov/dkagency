@@ -39,6 +39,11 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        transition: all .4s ease;
+
+        @include hover {
+            background: var(--services-gradient);
+        }
 
         @include tablet {
             padding: 40px 30px;

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: Max(30px, 30rem);
+  gap: 30px;
 
   &__title {
     position: relative;
@@ -52,7 +52,7 @@
     font-size: clamp(14px, 1.111vw, 16px);
     font-style: normal;
     font-weight: 400;
-    line-height: 110%;
+    line-height: 162%;
     text-align: center;
   }
 }

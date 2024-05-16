@@ -46,6 +46,8 @@
 	--cl-d: #{HexToRGB(#001325)}; // rgba(var(--cl-d),1.0);
 	--cl-e: #{HexToRGB(#0e2943)}; // rgba(var(--cl-e),1.0);
 	--cl-f: #{HexToRGB(#dcdcb7)}; // rgba(var(--cl-f),1.0);
+	--cl-g: #{HexToRGB(#8a8a8a)}; // rgba(var(--cl-g),1.0);
+	--cl-h: #{HexToRGB(#cb1f33)}; // rgba(var(--cl-h),1.0);
 	
 
 
@@ -56,15 +58,15 @@
 	--bg-a: #{HexToRGB(#ffffff)}; // rgba(var(--bg-a),1.0);
 	--bg-b: #{HexToRGB(#000000)}; // rgba(var(--bg-b),1.0);
 	--bg-c: #{HexToRGB(#0e2943)}; // rgba(var(--bg-c),1.0);
-	--bg-d: #{HexToRGB(#234842 )}; // rgba(var(--bg-d),1.0);
+	--bg-d: #{HexToRGB(#234842)}; // rgba(var(--bg-d),1.0);
+	--bg-e: #{HexToRGB(#d5d5cd)}; // rgba(var(--bg-e),1.0);
+	--bg-f: #{HexToRGB(#234842)}; // rgba(var(--bg-f),1.0);
 
 
 	// --------------- default gradient variable ---------------
 	--services-gradient: linear-gradient(135deg, #234842 0%, #005a4b 100%); // var(--services-gradient);
 	--slider-left-gradient: linear-gradient(271deg, rgba(153, 153, 153, 0) 0%, #d5d5cd 100%); // var(--slider-left-gradient);
 	--slider-right-gradient: linear-gradient(270deg, #d5d5cd 0%, rgba(153, 153, 153, 0) 100%); // var(--slider-right-gradient);
-
-
 
 
 	// -------------
@@ -74,6 +76,13 @@
 	@include small-tablet {
 		--animation-offset: 2%;
 	}
+
+	// --------------- default scroll variable ---------------
+	--scrollbar-thumb: #fff;
+	// --scrollbar-thumb-hover: #00aff0;
+	--scrollbar-track: transparent;
+	--scrollbar-track-hover: transparent;
+	--overlay-bg: rgba(0, 0, 0, 0.5);
 
 }
 

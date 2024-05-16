@@ -1,4 +1,4 @@
-.form-section {
+.contacts-section {
 	padding: 70px 0;
 	z-index: 1;
 	position: relative;
@@ -9,22 +9,13 @@
 		pointer-events: none;
 		z-index: -1;
 		overflow: hidden;
+		display: flex;
 
+		picture,
 		img {
-			display: flex;
-			position: absolute;
-			width: 120%;
-			height: 120%;
-			top: -10%;
-			left: 0%;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
-			object-position: center;
-			z-index: 1;
-			transition: transform .3s ease-out;
-
-			@include tablet {
-				transform: none !important;
-			}
 		}
 
 		&:before {
@@ -34,50 +25,29 @@
 			content: '';
 			display: block;
 			z-index: 2;
-			background-color: rgba(var(--bg-c),0.8);
+			background-color: rgba(var(--bg-b), 0.5);
+		}
+	}
+
+	.main-top {
+		gap: 15px;
+
+		&__title {
+			&:before,
+			&::after {
+				display: none;
+			}
 		}
 	}
 
 	&__inner {
-		display: grid;
-		grid-template-columns: clamp(450px, 45vw, 540rem) auto;
-		gap: clamp(40px, 10.833vw, 250rem);
-
-		@include tablet {
-			grid-template-columns: 2fr 1.5fr;
-			gap: clamp(40px, 6.833vw,250rem);
-		}
-
-		@include small-tablet {
-			grid-template-columns: 100%;
-		}
+		margin: 0 auto;
+		max-width: 630px;
+		background-color: rgba(var(--bg-e),1.0);
+		border-radius: 10px;
+		padding: clamp(40px, 5.371vw, 55px) clamp(30px, 10.547vw, 108px) clamp(40px, 4.199vw, 43px);
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
 	}
-
-	// .main-form {
-	// 	@include small-tablet {
-	// 		max-width: 576px;
-	// 		margin: 0 auto;
-	// 	}
-	// }
-
-	// .main-top {
-	// 	@include small-tablet  {
-	// 		@include for-mobile {
-	// 			text-align: center;
-	// 		}
-
-	// 	}
-
-	// 	&__title {
-	// 		&:before {
-	// 			max-width: Max(140px, 140rem);
-	// 		}
-
-	// 		@include small-tablet {
-	// 			@include for-mobile {
-	// 				margin: 0 auto;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
