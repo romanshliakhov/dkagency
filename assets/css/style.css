@@ -2032,6 +2032,8 @@ fieldset {
   font-size: clamp(13px, 1.111vw, 16px);
 }
 .modal__box {
+  margin: 0 auto;
+  max-width: 886px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
