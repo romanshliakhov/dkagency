@@ -12,9 +12,9 @@ export function modalClickHandler(attribute, activeClass, overlayClass = activeC
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, overlayClass);
   addCustomClass(curentModal, activeClass);
-  console.log(curentModal);
   fadeIn(curentModal, 200)
   disableScroll();
+
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
 }
 
@@ -28,7 +28,6 @@ const {
   burger
 } = vars;
 let innerButton;
-let innerButtonMode;
 const commonFunction = function () {
   removeCustomClass(overlay, activeMode);
   removeCustomClass(overlay, activeClass);
@@ -38,32 +37,63 @@ const commonFunction = function () {
   enableScroll();
 };
 
+function findAttribute(element, attributeName) {
+  let target = element;
+  while (target && target !== document) {
+    if (target.hasAttribute(attributeName)) {
+      return target.getAttribute(attributeName);
+    }
+    target = target.parentNode;
+  }
+  return null;
+}
+
 function buttonClickHandler(e, buttonAttribute, activeClass) {
   e.preventDefault();
-  const currentModalId = e.target.getAttribute(`${buttonAttribute}`);
-  const curentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
-  removeCustomClass(mobileMenu, activeClass);
-  removeClassInArray(burger, activeClass);
+  const currentModalId = findAttribute(e.target, buttonAttribute);
+  if (!currentModalId) {return}
+
+  const currentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
+  
+  mobileMenu && removeCustomClass(mobileMenu, activeClass);
+  burger && removeClassInArray(burger, activeClass);
 
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, activeClass);
-  addCustomClass(curentModal, activeClass);
-  console.log(curentModal)
-  fadeIn(curentModal, 200)
+  addCustomClass(overlay, activeMode);
+  addCustomClass(currentModal, activeClass);
+  fadeIn(currentModal, 200, 'flex');
+
   disableScroll();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
-  innerButtonMode = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close.mode`);
 }
 
 function overlayClickHandler(e, activeClass) {
-  if (e.target === overlay || e.target === innerButton || e.target === innerButtonMode) commonFunction();
+  if (e.target === overlay || e.target === innerButton) commonFunction();
 }
 
 function modalInit(buttonsArray, buttonAttribute, activeClass) {
   buttonsArray.map(function (btn) {
-    btn.addEventListener("click", (e) =>
-        buttonClickHandler(e, buttonAttribute, activeClass)
-    );
+    btn.addEventListener("click", (e) => {
+      buttonClickHandler(e, buttonAttribute, activeClass);
+
+      if (btn.dataset.orderName) {
+        const form = document.querySelector(`[data-popup="${btn.getAttribute(buttonAttribute)}"] .main-form`);
+    
+        if (form) {
+            let hiddenInput = form.querySelector('input[name="form_name"]');
+            if (!hiddenInput) {
+                hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'form_name';
+                form.appendChild(hiddenInput);
+            }
+            hiddenInput.value = btn.dataset.orderName;
+        }
+      }
+    });
+
+    
   });
 }
 
@@ -72,25 +102,3 @@ overlay && overlay.addEventListener("click", function (e) {
 });
 
 modalInit(modalsButton, "data-btn-modal", activeClass);
-
-// innerButtonModal && innerButtonModal.map(function (btn) {
-//   btn.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const prevId = this.closest('[data-popup]').getAttribute('data-popup');
-//
-//     const currentModalId = this.getAttribute("data-btn-inner");
-//     const curentModal = overlay.querySelector(
-//         `[data-popup="${currentModalId}"]`
-//     );
-//     removeClassInArray(modals, activeClass);
-//     addCustomClass(overlay, activeClass);
-//     fadeOut(document.querySelector(`[data-popup="${prevId}"]`), 0);
-//     fadeIn(curentModal, 200);
-//     addCustomClass(curentModal, activeClass);
-//     disableScroll();
-//     innerButton = overlay.querySelector(
-//         `${"[data-popup]"}.${activeClass} .close`
-//     );
-//   });
-// });
-

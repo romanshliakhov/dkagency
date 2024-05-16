@@ -29,7 +29,7 @@
                                 <?php endif; ?>
                             </div>
 
-                            <button class="pricing-section__service-btn btn" data-btn-modal=“order” >Order site</button>
+                            <button class="pricing-section__service-btn btn" data-btn-modal='order' data-order-name="<?php echo $service_title ?>">Order site</button>
 
                             <?php if (have_rows('service_advantage')) : ?>
                                 <ul class="pricing-section__service-advantages">

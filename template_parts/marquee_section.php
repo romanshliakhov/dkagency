@@ -23,6 +23,24 @@
                         </div>
                     </li>
             <?php endforeach; ?>
+
+            <?php foreach( $project_slider as $image ) : ?>
+                    <li class="marquee-section__slide swiper-slide">
+                        <div class="marquee-section__slide-img">
+                            <img src="<?php echo esc_url( $image['sizes']['large'] ); ?>"
+                                alt="<?php echo esc_attr( $image['alt'] ); ?>"/>
+                        </div>
+                    </li>
+            <?php endforeach; ?>
+
+            <?php foreach( $project_slider as $image ) : ?>
+                    <li class="marquee-section__slide swiper-slide">
+                        <div class="marquee-section__slide-img">
+                            <img src="<?php echo esc_url( $image['sizes']['large'] ); ?>"
+                                alt="<?php echo esc_attr( $image['alt'] ); ?>"/>
+                        </div>
+                    </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </section>

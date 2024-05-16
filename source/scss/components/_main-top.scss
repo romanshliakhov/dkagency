@@ -8,12 +8,13 @@
     position: relative;
     color: rgba(var(--cl-e),1.0);
     font-family: var(--font-family-inter);
-    font-size: 35px;
+    font-size: clamp(30px, 3.418vw, 35px);
     font-style: normal;
     font-weight: 700;
     line-height: 110%;
     position: relative;
     width: fit-content;
+    text-align: center;
 
     &::before {
       content: '';

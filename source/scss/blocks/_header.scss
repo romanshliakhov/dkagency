@@ -10,7 +10,7 @@
   }
 
   &__inner {
-    padding: 19px clamp(20px, 4.167vw, 60px);
+    padding: clamp(14px, 1.855vw, 19px) clamp(24px, 4.167vw, 60px);
     display: flex;
     align-items: center;
     justify-content: space-between;

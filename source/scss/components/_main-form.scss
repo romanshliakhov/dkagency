@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 45px;
+	gap: clamp(30px, 4.395vw, 45px);
 
 	&__labels {
 		width: 100%;
@@ -12,12 +12,17 @@
 	}
 
 	&__grid {
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 15px;
 
 		label:last-child {
 			grid-column: 1/-1;
+		}
+
+		@include mobile{
+			grid-template-columns: 100%;
 		}
 	}
 
@@ -34,10 +39,10 @@
 	input, textarea {
 		width: 100%;
 		padding: 15px 20px;
-		background-color: rgba(var(--bg-e),1.0);
+		background-color: rgba(var(--bg-h),1.0);
 
 		color:  rgba(var(--cl-e),1.0);
-		font-family: var(--font-family);
+		font-family: var(--font-family-inter);
 		font-size: clamp(14px, 1.111vw, 16px);
 		line-height: 140%;
 		font-weight: 400;
@@ -94,6 +99,7 @@
 		color: rgba(var(--cl-a),1.0);
 
 		input {
+			padding: 0;
 			cursor: pointer;
 			position: absolute;
 			inset: 0;
@@ -113,6 +119,7 @@
 	}
 
 	.wpcf7 {
+		max-width: 886px;
 		position: relative;
 		z-index: 1;
 
@@ -120,13 +127,13 @@
 			display: none;
 		}
 
-		&-not-valid {
-			border: 1px solid rgba(var(--cl-h),1.0);
+		// &-not-valid {
+		// 	border: 1px solid rgba(var(--cl-h),1.0);
 
-			&::placeholder {
-				color: rgba(var(--cl-h),1.0);
-			}
-		}
+		// 	&::placeholder {
+		// 		color: rgba(var(--cl-h),1.0);
+		// 	}
+		// }
 
 		&-not-valid-tip {
 			bottom: 2px;
@@ -142,6 +149,30 @@
 				display: none;
 				position: absolute;
 			}
+		}
+
+		&-select {
+			position: relative;
+			margin: 0;
+			width: 100%;
+			padding: 15px 19px;
+			background-color: rgba(var(--bg-h),1.0);
+			outline: none;
+			color: rgba(var(--cl-e),1.0);
+			font-family: var(--font-family-inter);
+			font-size: clamp(14px, 1.111vw, 16px);
+			line-height: 140%;
+			font-weight: 400;
+			text-transform: capitalize;
+			border: 1px solid rgba(var(--cl-e),1.0);
+			border-radius: 10px;
+			transition: all .4s;
+			appearance: none;
+			overflow: hidden;
+			background-image: var(--select-icon);
+			background-position: right;
+			background-repeat: no-repeat;
+			background-position-x: calc(100% - 20px);
 		}
 	}
 }

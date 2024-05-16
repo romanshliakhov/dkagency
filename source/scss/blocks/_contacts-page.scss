@@ -24,7 +24,7 @@
 		max-width: 847px;
 		background-color: rgba(var(--bg-e),1.0);
 		border-radius: 10px;
-		padding: 45px 72px;
+		padding: 45px clamp(30px, 7.324vw, 75px);
 		display: flex;
 		flex-direction: column;
 		gap: 15px;

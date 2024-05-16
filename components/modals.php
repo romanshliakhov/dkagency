@@ -28,18 +28,7 @@
                 </svg>
             </button>
 
-            <div class="modal__text">
-                <h2 class="modal__title">
-                    title
-                </h2>
-                <span class="modal__descr">
-                    text
-                </span>
-            </div>
-
-            <div class="contacts-page__form">
-	            <?php echo do_shortcode($form_shortcode); ?>
-            </div>
+            <?php echo do_shortcode($form_shortcode); ?>
         </div>
     </div>
 </div>

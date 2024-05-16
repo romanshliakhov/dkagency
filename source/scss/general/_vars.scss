@@ -19,9 +19,9 @@
 	// --header-height: 142rem;
 	// --team-slider-offset: clamp(15px, 3.90625vw, 40rem);
 
-	// @include tablet {
-	// 	--header-height: 112px !important;
-	// }
+	@include tablet {
+		--header-height: 81px !important;
+	}
 
 
 	// @include tablet {
@@ -61,6 +61,7 @@
 	--bg-d: #{HexToRGB(#234842)}; // rgba(var(--bg-d),1.0);
 	--bg-e: #{HexToRGB(#d5d5cd)}; // rgba(var(--bg-e),1.0);
 	--bg-f: #{HexToRGB(#234842)}; // rgba(var(--bg-f),1.0);
+	--bg-h: #{HexToRGB(#f3f3ec)}; // rgba(var(--bg-h),1.0);
 
 
 	// --------------- default gradient variable ---------------

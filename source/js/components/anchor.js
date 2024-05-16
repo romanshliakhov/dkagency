@@ -1,7 +1,7 @@
 import SmoothScroll from 'smooth-scroll';
 
 new SmoothScroll('a[href*="#"]', {
-  speed: 600,
+  speed: 300,
   offset: 0
 });
 

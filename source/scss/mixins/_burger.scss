@@ -2,9 +2,9 @@
 
 @mixin burger {
   --burger-width: 30px;
-  --burger-height: 25px;
-  --burger-line-height: 3px;
-  --border-radius: 3px;
+  --burger-height: 20px;
+  --burger-line-height: 2px;
+  --border-radius: 2px;
 
   position: relative;
   border: none;

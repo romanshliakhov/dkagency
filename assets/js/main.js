@@ -89,7 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smooth_scroll__WEBPACK_IMPORTED_MODULE_0__);
 
 new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('a[href*="#"]', {
-  speed: 600,
+  speed: 300,
   offset: 0
 });
 
@@ -244,7 +244,6 @@ function modalClickHandler(attribute, activeClass) {
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, overlayClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
-  console.log(curentModal);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 200);
   (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_1__.disableScroll)();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
@@ -259,7 +258,6 @@ const {
   burger
 } = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
 let innerButton;
-let innerButtonMode;
 const commonFunction = function () {
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeMode);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeClass);
@@ -267,54 +265,60 @@ const commonFunction = function () {
   modals.forEach(modal => (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeOut)(modal, 300));
   (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_2__.enableScroll)();
 };
+function findAttribute(element, attributeName) {
+  let target = element;
+  while (target && target !== document) {
+    if (target.hasAttribute(attributeName)) {
+      return target.getAttribute(attributeName);
+    }
+    target = target.parentNode;
+  }
+  return null;
+}
 function buttonClickHandler(e, buttonAttribute, activeClass) {
   e.preventDefault();
-  const currentModalId = e.target.getAttribute(`${buttonAttribute}`);
-  const curentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(mobileMenu, activeClass);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(burger, activeClass);
+  const currentModalId = findAttribute(e.target, buttonAttribute);
+  if (!currentModalId) {
+    return;
+  }
+  const currentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
+  mobileMenu && (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(mobileMenu, activeClass);
+  burger && (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(burger, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, activeClass);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
-  console.log(curentModal);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 200);
+  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, activeMode);
+  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(currentModal, activeClass);
+  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(currentModal, 200, 'flex');
   (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_1__.disableScroll)();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
-  innerButtonMode = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close.mode`);
 }
 function overlayClickHandler(e, activeClass) {
-  if (e.target === overlay || e.target === innerButton || e.target === innerButtonMode) commonFunction();
+  if (e.target === overlay || e.target === innerButton) commonFunction();
 }
 function modalInit(buttonsArray, buttonAttribute, activeClass) {
   buttonsArray.map(function (btn) {
-    btn.addEventListener("click", e => buttonClickHandler(e, buttonAttribute, activeClass));
+    btn.addEventListener("click", e => {
+      buttonClickHandler(e, buttonAttribute, activeClass);
+      if (btn.dataset.orderName) {
+        const form = document.querySelector(`[data-popup="${btn.getAttribute(buttonAttribute)}"] .main-form`);
+        if (form) {
+          let hiddenInput = form.querySelector('input[name="form_name"]');
+          if (!hiddenInput) {
+            hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'form_name';
+            form.appendChild(hiddenInput);
+          }
+          hiddenInput.value = btn.dataset.orderName;
+        }
+      }
+    });
   });
 }
 overlay && overlay.addEventListener("click", function (e) {
   overlayClickHandler(e, activeClass);
 });
 modalInit(modalsButton, "data-btn-modal", activeClass);
-
-// innerButtonModal && innerButtonModal.map(function (btn) {
-//   btn.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const prevId = this.closest('[data-popup]').getAttribute('data-popup');
-//
-//     const currentModalId = this.getAttribute("data-btn-inner");
-//     const curentModal = overlay.querySelector(
-//         `[data-popup="${currentModalId}"]`
-//     );
-//     removeClassInArray(modals, activeClass);
-//     addCustomClass(overlay, activeClass);
-//     fadeOut(document.querySelector(`[data-popup="${prevId}"]`), 0);
-//     fadeIn(curentModal, 200);
-//     addCustomClass(curentModal, activeClass);
-//     disableScroll();
-//     innerButton = overlay.querySelector(
-//         `${"[data-popup]"}.${activeClass} .close`
-//     );
-//   });
-// });
 
 /***/ }),
 
