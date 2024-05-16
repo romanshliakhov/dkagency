@@ -860,6 +860,7 @@ fieldset {
   color: rgba(var(--cl-e), 1);
 }
 .main-form textarea {
+  height: 108px;
   overflow-y: auto;
 }
 .main-form textarea::-webkit-scrollbar {
@@ -915,6 +916,24 @@ fieldset {
 }
 .main-form .wpcf7-spinner {
   display: none;
+}
+.main-form .wpcf7-not-valid {
+  border: 1px solid rgba(var(--cl-h), 1);
+}
+.main-form .wpcf7-not-valid::-webkit-input-placeholder {
+  color: rgba(var(--cl-h), 1);
+}
+.main-form .wpcf7-not-valid::-moz-placeholder {
+  color: rgba(var(--cl-h), 1);
+}
+.main-form .wpcf7-not-valid:-ms-input-placeholder {
+  color: rgba(var(--cl-h), 1);
+}
+.main-form .wpcf7-not-valid::-ms-input-placeholder {
+  color: rgba(var(--cl-h), 1);
+}
+.main-form .wpcf7-not-valid::placeholder {
+  color: rgba(var(--cl-h), 1);
 }
 .main-form .wpcf7-not-valid-tip {
   bottom: 2px;

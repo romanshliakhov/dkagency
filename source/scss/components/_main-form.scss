@@ -64,6 +64,7 @@
 	}
 
 	textarea {
+		height: 108px;
 		overflow-y: auto;
 
 		&::-webkit-scrollbar {
@@ -127,13 +128,13 @@
 			display: none;
 		}
 
-		// &-not-valid {
-		// 	border: 1px solid rgba(var(--cl-h),1.0);
+		&-not-valid {
+			border: 1px solid rgba(var(--cl-h),1.0);
 
-		// 	&::placeholder {
-		// 		color: rgba(var(--cl-h),1.0);
-		// 	}
-		// }
+			&::placeholder {
+				color: rgba(var(--cl-h),1.0);
+			}
+		}
 
 		&-not-valid-tip {
 			bottom: 2px;
