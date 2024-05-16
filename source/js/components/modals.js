@@ -12,6 +12,7 @@ export function modalClickHandler(attribute, activeClass, overlayClass = activeC
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, overlayClass);
   addCustomClass(curentModal, activeClass);
+  console.log(curentModal);
   fadeIn(curentModal, 200)
   disableScroll();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
@@ -22,6 +23,7 @@ const {
   activeClass,
   mobileMenu,
   modals,
+  modalsButton,
   activeMode,
   burger
 } = vars;
@@ -46,6 +48,7 @@ function buttonClickHandler(e, buttonAttribute, activeClass) {
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, activeClass);
   addCustomClass(curentModal, activeClass);
+  console.log(curentModal)
   fadeIn(curentModal, 200)
   disableScroll();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
@@ -68,7 +71,7 @@ overlay && overlay.addEventListener("click", function (e) {
   overlayClickHandler(e, activeClass);
 });
 
-// modalInit(modalsButton, "data-btn-modal", activeClass);
+modalInit(modalsButton, "data-btn-modal", activeClass);
 
 // innerButtonModal && innerButtonModal.map(function (btn) {
 //   btn.addEventListener("click", function (e) {

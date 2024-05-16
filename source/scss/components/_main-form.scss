@@ -11,6 +11,16 @@
 		gap: 15px;
 	}
 
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 15px;
+
+		label:last-child {
+			grid-column: 1/-1;
+		}
+	}
+
 	label {
 		position: relative;
 		width: 100%;

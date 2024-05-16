@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_anchor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/anchor */ "./source/js/components/anchor.js");
 /* harmony import */ var _components_observer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/observer */ "./source/js/components/observer.js");
 /* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/form */ "./source/js/components/form.js");
+/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/modals */ "./source/js/components/modals.js");
 
 // import './components/animation';
 
@@ -22,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import './components/modals';
+
 
 /***/ }),
 
@@ -43,7 +44,6 @@ __webpack_require__.r(__webpack_exports__);
   bodyEl: document.body,
   header: document.querySelector("header"),
   burger: document.querySelectorAll('.burger'),
-  // mobileMenu: document.querySelector('.menu-drawer'),
   mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
   formWrapper: document.querySelector('.wpcf7'),
@@ -51,6 +51,7 @@ __webpack_require__.r(__webpack_exports__);
   observerSections: document.querySelectorAll('section[id]'),
   overlay: document.querySelector('[data-overlay]'),
   modals: [...document.querySelectorAll('[data-popup]')],
+  modalsButton: [...document.querySelectorAll('[data-btn-modal]')],
   marqueeSlider: document.querySelector('.marquee-section .swiper-container')
 });
 
@@ -243,6 +244,7 @@ function modalClickHandler(attribute, activeClass) {
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, overlayClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
+  console.log(curentModal);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 200);
   (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_1__.disableScroll)();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
@@ -252,6 +254,7 @@ const {
   activeClass,
   mobileMenu,
   modals,
+  modalsButton,
   activeMode,
   burger
 } = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
@@ -273,6 +276,7 @@ function buttonClickHandler(e, buttonAttribute, activeClass) {
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
+  console.log(curentModal);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 200);
   (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_1__.disableScroll)();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
@@ -289,8 +293,7 @@ function modalInit(buttonsArray, buttonAttribute, activeClass) {
 overlay && overlay.addEventListener("click", function (e) {
   overlayClickHandler(e, activeClass);
 });
-
-// modalInit(modalsButton, "data-btn-modal", activeClass);
+modalInit(modalsButton, "data-btn-modal", activeClass);
 
 // innerButtonModal && innerButtonModal.map(function (btn) {
 //   btn.addEventListener("click", function (e) {
@@ -378,7 +381,6 @@ __webpack_require__.r(__webpack_exports__);
 const {
   marqueeSlider
 } = _vars__WEBPACK_IMPORTED_MODULE_1__["default"];
-console.log(marqueeSlider);
 if (marqueeSlider) {
   const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](marqueeSlider, {
     modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Autoplay],

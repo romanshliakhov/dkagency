@@ -4,8 +4,6 @@ import { Autoplay } from 'swiper/modules';
 
 const { marqueeSlider } = vars;
 
-console.log(marqueeSlider);
-
 if (marqueeSlider) {
   const swiper = new Swiper(marqueeSlider, {
     modules: [Autoplay],

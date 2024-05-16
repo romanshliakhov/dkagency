@@ -1,0 +1,32 @@
+.contacts-page {
+	padding: 90px 0;
+	z-index: 1;
+	position: relative;
+	background-color: #fff;
+
+	.main-top {
+		gap: 15px;
+
+		&__title {
+			&:before,
+			&::after {
+				display: none;
+			}
+		}
+
+		&__text {
+			max-width: 545px;
+		}
+	}
+
+	&__inner {
+		margin: 0 auto;
+		max-width: 847px;
+		background-color: rgba(var(--bg-e),1.0);
+		border-radius: 10px;
+		padding: 45px 72px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+}

@@ -8,7 +8,6 @@ export default {
 
   header: document.querySelector("header"),
   burger: document.querySelectorAll('.burger'),
-  // mobileMenu: document.querySelector('.menu-drawer'),
   mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
 
@@ -18,7 +17,7 @@ export default {
   observerSections: document.querySelectorAll('section[id]'),
   overlay: document.querySelector('[data-overlay]'),
   modals: [...document.querySelectorAll('[data-popup]')],
-
+  modalsButton: [...document.querySelectorAll('[data-btn-modal]')],
   marqueeSlider: document.querySelector('.marquee-section .swiper-container'),
 }
 

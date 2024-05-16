@@ -5,7 +5,7 @@ import './components/mobileMenu';
 import './components/anchor';
 import './components/observer';
 import './components/form';
-// import './components/modals';
+import './components/modals';
 
 
 
