@@ -13,6 +13,6 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 	<?php load_template( get_template_directory() . '/components/custom_header.php', true );?>
 <main>

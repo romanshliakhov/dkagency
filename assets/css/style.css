@@ -611,6 +611,8 @@ fieldset {
   --services-title-icon: url("data:image/svg+xml,%3Csvg width='20' height='30' viewBox='0 0 20 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.01709 2.06152C5.8818 9.79094 10.9726 17.2369 13.7084 25.4441' stroke='%230E2943' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M0 22.3323C4.9884 22.3323 11.1113 24.4625 14.8966 27.6888C16.8277 29.3348 16.1399 23.9582 16.2759 23.0598C16.7332 20.0388 18 17.0662 18 14' stroke='%230E2943' stroke-width='4' stroke-linejoin='round' /%3E%3C/svg%3E");
   --title-line: url("data:image/svg+xml,%3Csvg width='111' height='1' viewBox='0 0 111 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M110 0.5L1 0.50001' stroke='white' stroke-linecap='round' /%3E%3C/svg%3E");
   --select-icon: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.3033 1.75736C11.5962 1.46447 11.5962 0.989593 11.3033 0.696699C11.0104 0.403806 10.5355 0.403806 10.2426 0.696699L6 4.93934L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989592 0.403806 1.46447 0.696699 1.75736L5.46967 6.53033ZM5.25 5L5.25 6L6.75 6L6.75 5L5.25 5Z' fill='black' /%3E%3C/svg%3E");
+  --contacts-page-left-decor: url("data:image/svg+xml,%3Csvg width='98' height='92' viewBox='0 0 98 92' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.83203 2.60413C2.83203 15.8515 11.5311 30.4747 20.7862 39.7298C34.3804 53.3239 45.4992 65.0193 63.0851 73.8123C72.0794 78.3095 82.2156 82.0013 90.4729 87.5062' stroke='%230E2943' stroke-width='5' stroke-linecap='round' /%3E%3Cpath d='M83.0808 60.9114C83.0808 68.9173 90.9767 80.3483 94.3747 87.4275C96.2602 91.3556 89.9231 87.7251 87.5616 87.4889C78.3776 86.5705 71.5126 86.8935 62.0889 88.5324' stroke='%230E2943' stroke-width='5' stroke-linecap='square' /%3E%3C/svg%3E");
+  --contacts-page-right-decor: url("data:image/svg+xml,%3Csvg width='98' height='93' viewBox='0 0 98 93' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M94.8882 89.6398C94.8882 76.3924 86.1891 61.7692 76.934 52.5141C63.3399 38.92 52.221 27.2245 34.6351 18.4316C25.6408 13.9344 15.5047 10.2426 7.24732 4.73769' stroke='%230E2943' stroke-width='5' stroke-linecap='round' /%3E%3Cpath d='M14.6394 31.3325C14.6394 23.3266 6.74352 11.8956 3.34547 4.81637C1.46 0.888297 7.79714 4.51883 10.1587 4.75499C19.3426 5.67338 26.2076 5.35045 35.6313 3.71153' stroke='%230E2943' stroke-width='5' stroke-linecap='square' /%3E%3C/svg%3E");
 }
 
 .btn {
@@ -1831,10 +1833,25 @@ fieldset {
 }
 
 .contacts-page {
+  position: relative;
   padding: 90px 0;
   z-index: 1;
-  position: relative;
-  background-color: #fff;
+  background-color: rgba(var(--bg-a), 1);
+  overflow: hidden;
+}
+.contacts-page__left {
+  position: absolute;
+  left: 0;
+  bottom: 150px;
+}
+.contacts-page__right {
+  position: absolute;
+  right: 0;
+}
+@media (max-width: 1200px) {
+  .contacts-page__left, .contacts-page__right {
+    display: none;
+  }
 }
 .contacts-page .main-top {
   gap: 15px;
@@ -1846,6 +1863,7 @@ fieldset {
   max-width: 545px;
 }
 .contacts-page__inner {
+  position: relative;
   margin: 0 auto;
   max-width: 847px;
   background-color: rgba(var(--bg-e), 1);
@@ -1859,6 +1877,28 @@ fieldset {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 15px;
+}
+.contacts-page__inner::before {
+  content: "";
+  position: absolute;
+  left: -180px;
+  top: 75px;
+  background-image: var(--contacts-page-left-decor);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 98px;
+  height: 92px;
+}
+.contacts-page__inner::after {
+  content: "";
+  position: absolute;
+  right: -180px;
+  bottom: -20px;
+  background-image: var(--contacts-page-right-decor);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 98px;
+  height: 93px;
 }
 
 @media (max-width: 1024px) {

@@ -88,31 +88,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scroll */ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js");
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smooth_scroll__WEBPACK_IMPORTED_MODULE_0__);
 
-
-// new SmoothScroll('a[href*="#"]', {
-//   speed: 150,
-//   offset: 0
-// });
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Проверяем наличие якоря в URL страницы
-  if (window.location.hash) {
-    // Получаем элемент с ID, соответствующим якорю
-    const targetElement = document.querySelector(window.location.hash);
-    if (targetElement) {
-      // Прокручиваем страницу к этому элементу
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
-
-  // Инициализируем плавный скролл для всех ссылок с якорями на текущей странице
-  new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('a[href*="#"]', {
-    speed: 150,
-    offset: 0
-  });
+new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('a[href*="#"]', {
+  speed: 150,
+  offset: 0
 });
 
 /***/ }),

@@ -1,8 +1,27 @@
 .contacts-page {
+	position: relative;
 	padding: 90px 0;
 	z-index: 1;
-	position: relative;
-	background-color: #fff;
+	background-color: rgba(var(--bg-a),1.0);
+	overflow: hidden;
+
+	&__left {
+		position: absolute;
+		left: 0;
+		bottom: 150px;
+	}
+
+	&__right {
+		position: absolute;
+		right: 0;
+	}
+
+	@include laptop {
+		&__left,
+		&__right {
+			display: none;
+		}
+	}
 
 	.main-top {
 		gap: 15px;
@@ -20,6 +39,7 @@
 	}
 
 	&__inner {
+		position: relative;
 		margin: 0 auto;
 		max-width: 847px;
 		background-color: rgba(var(--bg-e),1.0);
@@ -28,5 +48,29 @@
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -180px;
+			top: 75px;
+			background-image: var(--contacts-page-left-decor);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 98px;
+			height: 92px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: -180px;
+			bottom: -20px;
+			background-image: var(--contacts-page-right-decor);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 98px;
+			height: 93px;
+		}
 	}
 }
