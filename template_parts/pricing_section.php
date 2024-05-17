@@ -16,7 +16,7 @@
                         $per_month = get_sub_field('per_month');
                         ?>
                         
-                        <li class="pricing-section__service">
+                        <li class="pricing-section__service" data-aos="fade-up" data-aos-offset="300" data-aos-easing="linear" data-aos-duration="500">
                             <span class="pricing-section__service-heading"><?php echo $service_title ?></span>
 
                             <div class="pricing-section__service-price">

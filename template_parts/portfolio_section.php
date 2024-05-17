@@ -14,7 +14,7 @@
                         $portfolio_preview = get_sub_field( 'preview' );
                         ?>
                         
-                        <li class="portfolio-section__item">
+                        <li class="portfolio-section__item" data-aos="fade-up" data-aos-offset="300" data-aos-easing="linear" data-aos-duration="500">
                             <img width='413' height='413' src="<?php echo esc_url( $portfolio_preview['url'] ); ?>" 
                                 alt="<?php echo esc_attr( $portfolio_preview['alt'] ); ?>" />
                         </li>

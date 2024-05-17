@@ -18,7 +18,7 @@
                         $process_descr = get_sub_field( 'process_descr' );
                         ?>
                         
-                        <li class="process-section__lists-row">
+                        <li class="process-section__lists-row" data-aos="fade-up" data-aos-offset="300" data-aos-easing="linear" data-aos-duration="500">
                             <span class="process-section__lists-icon">
                                 <img width='50' height='50' src="<?php echo esc_url( $process_icon['url'] ); ?>" 
                                         alt="<?php echo esc_attr( $process_icon['alt'] ); ?>" />

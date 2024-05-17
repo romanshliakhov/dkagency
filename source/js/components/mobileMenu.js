@@ -8,7 +8,10 @@ const {
 	burger,
 	mobileMenu,
 	header,
+	headerBtn,
 	activeClass} = vars;
+
+
 
 const mobileMenuHandler = function(overlay, mobileMenu, burger) {
 	burger.forEach((btn) => {
@@ -27,7 +30,6 @@ const mobileMenuHandler = function(overlay, mobileMenu, burger) {
 			}
 		})
 	});
-
 }
 
 export const hideMenuHandler = function(overlay, mobileMenu, burger) {
@@ -39,6 +41,7 @@ export const hideMenuHandler = function(overlay, mobileMenu, burger) {
 
 if (overlay) {
 	mobileMenuHandler(overlay,mobileMenu,burger);
+
 	overlay.addEventListener('click', function(e){
 		if (e.target.classList.contains('overlay')) {
 			hideMenuHandler(overlay,mobileMenu,burger);

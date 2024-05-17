@@ -11,7 +11,7 @@
 
         @include small-tablet {
             flex-wrap: wrap;
-            gap: 40px;
+            gap: clamp(30px, 5.208vw, 40px);
             margin-bottom: 20px;
         }
     }
@@ -43,15 +43,17 @@
             justify-content: center;
 
             .main-nav__list {
-                flex-direction: column;
-                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                gap: 20px 30px;
+                padding: 0 20px;
             }
         }
     }
 
     &__btn {
-        height: clamp(43px, 7.161vw, 55px);
-        max-width: clamp(150px, 16.389vw, 236px);
+        height: clamp(40px, 7.161vw, 55px);
+        max-width: clamp(130px, 16.389vw, 236px);
     }
 
     &__copyright {

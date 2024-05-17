@@ -10,7 +10,7 @@
 
     color: rgba(var(--cl-d),1.0);
     font-family: var(--font-family-inter);
-    font-size: Max(16px, 16rem);
+    font-size: clamp(14px, 1.111vw, 16px);
     font-style: normal;
     font-weight: 500;
     line-height: 110%;

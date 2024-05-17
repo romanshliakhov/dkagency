@@ -10,6 +10,7 @@ export default {
   burger: document.querySelectorAll('.burger'),
   mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
+  headerBtn: document.querySelector('.header__btn'),
 
   formWrapper: document.querySelector( '.wpcf7' ),
   formSubmitBtn: document.querySelector('.wpcf7-submit'),

@@ -37,7 +37,7 @@ if (formWrapper && formSubmitBtn) {
 }
 
 // Получаем все поля ввода на странице
-const inputs = document.querySelectorAll('input');
+const inputs = document.querySelectorAll('input[type="tel"]');
 
 // Добавляем обработчик события "input" для каждого поля ввода
 inputs.forEach(input => {

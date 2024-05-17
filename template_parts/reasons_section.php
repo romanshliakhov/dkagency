@@ -15,7 +15,7 @@
                         $reasons_descr = get_sub_field( 'reasons_descr' );
                         ?>
                         
-                        <li class="reasons-section__lists-row">
+                        <li class="reasons-section__lists-row" data-aos="fade-up" data-aos-offset="300" data-aos-easing="linear" data-aos-duration="500">
                             <span class="reasons-section__lists-heading"><?php echo $reasons_heading ?></span>
 
                             <p class="reasons-section__lists-descr"><?php echo $reasons_descr ?></p>

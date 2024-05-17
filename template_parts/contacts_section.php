@@ -15,7 +15,7 @@
 
 
 	<div class="container">
-		<div class="contacts-section__inner">
+		<div class="contacts-section__inner" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="500">
 			<?php display_main_top_section('h2',$title, $text) ?>
 
             <div class="contacts-section__form">
