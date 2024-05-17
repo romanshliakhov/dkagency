@@ -3,7 +3,7 @@
 ?>
 
 
-<section class="marquee-section" data-aos="flip-up" data-aos-duration="500">
+<section class="marquee-section">
     <div class="marquee-section__slider swiper-container">
         <ul class="marquee-section__slider-wrapper swiper-wrapper">
             <?php foreach( $project_slider as $image ) : ?>

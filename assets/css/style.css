@@ -1710,7 +1710,6 @@ body {
   font-family: var(--font-family-inter);
   color: rgba(var(--cl-a), 1);
   background-color: var(--body-bg);
-  overflow-x: hidden;
 }
 
 main {
@@ -2611,7 +2610,6 @@ fieldset {
 
 .services-section {
   position: relative;
-  overflow-x: hidden;
   padding: clamp(50px, 6.25vw, 90px) 0;
   background-color: rgba(var(--bg-a), 1);
 }
@@ -2716,6 +2714,7 @@ fieldset {
   line-height: 110%;
 }
 .services-section__lists {
+  overflow: hidden;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   display: -webkit-box;
