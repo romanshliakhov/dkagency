@@ -27,6 +27,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_observer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/observer */ "./source/js/components/observer.js");
 /* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/form */ "./source/js/components/form.js");
 /* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modals */ "./source/js/components/modals.js");
+/* harmony import */ var _components_homeLocation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/homeLocation */ "./source/js/components/homeLocation.js");
+
 
 
 
@@ -57,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
   burger: document.querySelectorAll('.burger'),
   mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
-  headerBtn: document.querySelector('.header__btn'),
+  anchorLinks: document.querySelectorAll('.menu-link'),
   formWrapper: document.querySelector('.wpcf7'),
   formSubmitBtn: document.querySelector('.wpcf7-submit'),
   observerSections: document.querySelectorAll('section[id]'),
@@ -206,6 +208,53 @@ inputs.forEach(input => {
 
 /***/ }),
 
+/***/ "./source/js/components/homeLocation.js":
+/*!**********************************************!*\
+  !*** ./source/js/components/homeLocation.js ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/disable-scroll */ "./source/js/functions/disable-scroll.js");
+/* harmony import */ var _functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll */ "./source/js/functions/enable-scroll.js");
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_vars */ "./source/js/_vars.js");
+/* harmony import */ var _functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/customFunctions */ "./source/js/functions/customFunctions.js");
+
+
+
+
+const {
+  overlay,
+  burger,
+  mobileMenu,
+  header,
+  anchorLinks,
+  activeClass
+} = _vars__WEBPACK_IMPORTED_MODULE_2__["default"];
+window.addEventListener('DOMContentLoaded', function () {
+  anchorLinks.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      let clickValue = item.getAttribute('href');
+      if (!document.body.classList.contains('home')) {
+        window.location.href = `${window.location.origin}/${clickValue}`;
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(mobileMenu, activeClass);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(burger, activeClass);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeClass);
+      }
+    });
+  });
+  if (overlay) {
+    overlay.addEventListener('click', function (e) {
+      if (e.target.classList.contains('overlay')) {
+        hideMenuHandler(overlay, mobileMenu, burger);
+      }
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./source/js/components/mobileMenu.js":
 /*!********************************************!*\
   !*** ./source/js/components/mobileMenu.js ***!
@@ -230,12 +279,13 @@ const {
   burger,
   mobileMenu,
   header,
-  headerBtn,
+  anchorLinks,
   activeClass
 } = _vars__WEBPACK_IMPORTED_MODULE_2__["default"];
 const mobileMenuHandler = function (overlay, mobileMenu, burger) {
   burger.forEach(btn => {
     btn.addEventListener('click', function (e) {
+      console.log('here');
       e.preventDefault();
       (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.toggleCustomClass)(mobileMenu, activeClass);
       (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.toggleClassInArray)(burger, activeClass);
@@ -385,6 +435,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const {
   mainLinks,
+  anchorLinks,
   observerSections,
   overlay,
   mobileMenu,
@@ -393,13 +444,13 @@ const {
 } = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    mainLinks.forEach(link => {
+    anchorLinks.forEach(link => {
       link.addEventListener('click', function (e) {
         mobileMenu.classList.contains(activeClass) && (0,_mobileMenu__WEBPACK_IMPORTED_MODULE_2__.hideMenuHandler)(overlay, mobileMenu, burger);
       });
       const id = link.getAttribute('href').match(/[a-zA-Z]+/g).join('');
       if (entry.isIntersecting && id === entry.target.id) {
-        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeClassInArray)(mainLinks);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeClassInArray)(anchorLinks);
         (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.addCustomClass)(link, activeClass);
       } else if (!entry.isIntersecting && id === entry.target.id) {
         (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeCustomClass)(link, activeClass);

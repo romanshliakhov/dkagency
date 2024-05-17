@@ -94,5 +94,12 @@ function theme_admin_assets() {
 	);
 }
    
-   
 add_action( 'admin_enqueue_scripts', 'theme_admin_assets' );
+
+function add_custom_menu_link_class($atts, $item, $args) {
+    $atts['class'] = 'menu-link';
+    
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'add_custom_menu_link_class', 10, 3);

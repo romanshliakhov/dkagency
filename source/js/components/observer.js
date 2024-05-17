@@ -3,6 +3,7 @@ import {addCustomClass, removeCustomClass, removeClassInArray} from "../function
 import {hideMenuHandler} from "./mobileMenu";
 const {
   mainLinks,
+  anchorLinks,
   observerSections,
   overlay,
   mobileMenu,
@@ -12,7 +13,7 @@ const {
 
  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      mainLinks.forEach((link) => {
+      anchorLinks.forEach((link) => {
         link.addEventListener('click',function (e){
           mobileMenu.classList.contains(activeClass) && hideMenuHandler(overlay,mobileMenu,burger);
         });
@@ -20,7 +21,7 @@ const {
         const id = link.getAttribute('href').match(/[a-zA-Z]+/g).join('');
   
         if (entry.isIntersecting && id === entry.target.id) {
-          removeClassInArray(mainLinks);
+          removeClassInArray(anchorLinks);
           addCustomClass(link, activeClass);
         } else if (!entry.isIntersecting && id === entry.target.id) {
           removeCustomClass(link, activeClass);

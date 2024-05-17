@@ -8,14 +8,14 @@ const {
 	burger,
 	mobileMenu,
 	header,
-	headerBtn,
+	anchorLinks,
 	activeClass} = vars;
-
-
 
 const mobileMenuHandler = function(overlay, mobileMenu, burger) {
 	burger.forEach((btn) => {
 		btn.addEventListener('click', function(e){
+			console.log('here')
+			
 			e.preventDefault();
 
 			toggleCustomClass(mobileMenu, activeClass);

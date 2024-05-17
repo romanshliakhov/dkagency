@@ -1,5 +1,6 @@
 .marquee-section {
     padding: clamp(30px, 3.056vw, 44px) 0;
+    overflow: hidden;
 
     &__slider {
         width: 100%;

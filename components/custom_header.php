@@ -20,7 +20,7 @@ $header_logo = get_field( 'logo', 'options' );
 		            'menu_class' => 'main-nav__list',
 	            ) ); ?>
 
-                <a class="header__btn btn" href="#contacts">Contact Us</a>
+                <a class="header__btn btn menu-link" href="#contacts">Contact Us</a>
             </div>
             
             <button class="burger" type="button">

@@ -17,9 +17,9 @@
 
             <div class="services-section__wrapp">
                 <div class="services-section__aside">
-                    <span class="services-section__aside-heading" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="400"><?php echo $aside_heading ?></span>
+                    <span class="services-section__aside-heading" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="400"><?php echo $aside_heading ?></span>
 
-                    <p class="services-section__aside-descr" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="700"><?php echo $aside_descr ?></p>
+                    <p class="services-section__aside-descr" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"><?php echo $aside_descr ?></p>
                 </div>
 
                 <?php if (have_rows('services-section__list')) : ?>
@@ -30,7 +30,7 @@
                             $service_descr = get_sub_field( 'service_descr' );
                             ?>
                             
-                            <li class="services-section__lists-row" data-aos="fade-left" data-aos-offset="300" data-aos-easing="linear" data-aos-duration="500">
+                            <li class="services-section__lists-row" data-aos="fade-left" data-aos-offset="200" data-aos-easing="linear" data-aos-duration="500">
                                 <span class="services-section__lists-icon">
                                     <img width='144' height='144' src="<?php echo esc_url( $service_icon['url'] ); ?>" 
                                             alt="<?php echo esc_attr( $service_icon['alt'] ); ?>" />
