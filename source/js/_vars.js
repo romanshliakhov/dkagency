@@ -13,8 +13,8 @@ export default {
   
   anchorLinks: document.querySelectorAll('.menu-link'),
 
-  formWrapper: document.querySelector( '.wpcf7' ),
-  formSubmitBtn: document.querySelector('.wpcf7-submit'),
+  formWrappers: document.querySelectorAll( '.wpcf7' ),
+  // formSubmitBtn: document.querySelector('.wpcf7-submit'),
 
   observerSections: document.querySelectorAll('section[id]'),
   overlay: document.querySelector('[data-overlay]'),
@@ -23,6 +23,8 @@ export default {
   modalsButton: [...document.querySelectorAll('[data-btn-modal]')],
 
   marqueeSlider: document.querySelector('.marquee-section .swiper-container'),
+
+  innerButtonModal: [...document.querySelectorAll('[data-order-name]')],
 }
 
 

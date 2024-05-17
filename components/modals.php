@@ -6,17 +6,17 @@
 ?>
 
 <div data-overlay class="overlay fixed-block">
-    <div class="modal" data-popup="done">
+    <div class="modal modal--success" data-popup="done">
         <div class="modal__box" role="dialog" aria-modal="true">
-            <button class="close modal__close">
+            <!-- <button class="close modal__close">
                 <svg width="20" height="20">
                 	<use href="<?php echo $build_folder ?>img/sprite/sprite.svg#close"></use>
                 </svg>
-            </button>
+            </button> -->
 
-            <span class="modal__icon">
-                <img src="<?php echo $build_folder ?>img/sprite/success.svg" alt="done">
-            </span>
+            <span class="modal__title">Succefully!</span>
+
+            <p class="modal__text">Your message have been sent. Our manager will contact you shortly</p>
         </div>
     </div>
 

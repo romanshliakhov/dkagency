@@ -1,13 +1,8 @@
-import { disableScroll } from '../functions/disable-scroll';
-import { enableScroll } from '../functions/enable-scroll';
 import vars from '../_vars';
 
-import {toggleClassInArray, toggleCustomClass, removeCustomClass, removeClassInArray, addCustomClass} from '../functions/customFunctions';
+import {removeCustomClass, removeClassInArray} from '../functions/customFunctions';
 const {
-	overlay,
-	burger,
 	mobileMenu,
-	header,
 	anchorLinks,
 	activeClass} = vars;
 
@@ -25,12 +20,4 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    if (overlay) {
-        overlay.addEventListener('click', function(e){
-            if (e.target.classList.contains('overlay')) {
-                hideMenuHandler(overlay,mobileMenu,burger);
-            }
-        });
-    }
 });

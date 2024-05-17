@@ -1,40 +1,50 @@
-import {addCustomClass, removeCustomClass} from "../functions/customFunctions";
+import {addCustomClass, fadeOut, removeCustomClass} from "../functions/customFunctions";
 import vars from '../_vars'
-import {modalClickHandler} from "./modals";
+import {modalClickHandler, commonFunction} from "./modals";
 
-const {formSubmitBtn,formWrapper,activeMode, activeClass} = vars;
+const {formWrappers,activeMode, activeClass} = vars;
 
-function toggleLoader() {
-	removeCustomClass(formWrapper, 'loader');
-	removeCustomClass(formWrapper, 'loaded');
-}
+formWrappers.forEach(formWrapper => {
+	const formSubmitBtn = formWrapper.querySelector('.main-form__btn');
 
-if (formWrapper && formSubmitBtn) {
-	formSubmitBtn.addEventListener('click', function (){
-		removeCustomClass(formWrapper, 'loaded');
-		addCustomClass(formWrapper, 'loader');
-	})
+	if (formWrapper && formSubmitBtn) {
+		formSubmitBtn.addEventListener('click', function (){
+			removeCustomClass(formWrapper, 'loaded');
+			addCustomClass(formWrapper, 'loader');
+		})
+	
+		formWrapper.addEventListener( 'wpcf7invalid', function( event ) {
+			setTimeout(function (){
+				addCustomClass(formWrapper, 'loaded')
+			}, 1500)
+		}, false );
+	
+	
+		formWrapper.addEventListener( 'wpcf7mailsent', function( event ) {
+			modalClickHandler('done',  activeClass, activeMode);
 
-	formWrapper.addEventListener( 'wpcf7invalid', function( event ) {
-		setTimeout(function (){
-			addCustomClass(formWrapper, 'loaded')
-		}, 1500)
-	}, false );
+			const modalAttr = formWrapper.closest("[data-popup]").dataset.popup;
 
+			// if(modalAttr) {
+			// 	const curentModal = document.querySelector(`[data-popup="${modalAttr}"]`);
+			// 	removeCustomClass(curentModal, 'active');
+			// 	fadeOut(curentModal, 100);
+			// }
 
-	formWrapper.addEventListener( 'wpcf7mailsent', function( event ) {
-		modalClickHandler('done',  activeClass, activeMode);
-		toggleLoader()
-	}, false );
+			setTimeout(function (){
+				commonFunction();
+			}, 5000)
 
-
-
-	formWrapper.addEventListener( 'wpcf7mailfailed', function( event ) {
-		modalClickHandler('error',  activeClass, activeMode);
-		toggleLoader()
-	}, false );
-
-}
+			removeCustomClass(formWrapper, 'loader');
+			removeCustomClass(formWrapper, 'loaded');
+		}, false );
+	
+		formWrapper.addEventListener( 'wpcf7mailfailed', function( event ) {
+			removeCustomClass(formWrapper, 'loader');
+			removeCustomClass(formWrapper, 'loaded');
+		}, false );
+	}
+})
 
 // Получаем все поля ввода на странице
 const inputs = document.querySelectorAll('input[type="tel"]');

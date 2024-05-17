@@ -28,6 +28,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/form */ "./source/js/components/form.js");
 /* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modals */ "./source/js/components/modals.js");
 /* harmony import */ var _components_homeLocation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/homeLocation */ "./source/js/components/homeLocation.js");
+/* harmony import */ var _components_currentModal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/currentModal */ "./source/js/components/currentModal.js");
+/* harmony import */ var _components_currentModal__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_currentModal__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 
@@ -60,13 +63,15 @@ __webpack_require__.r(__webpack_exports__);
   mobileMenu: document.querySelector('.header__menu'),
   mainLinks: document.querySelectorAll('header .menu-item a'),
   anchorLinks: document.querySelectorAll('.menu-link'),
-  formWrapper: document.querySelector('.wpcf7'),
-  formSubmitBtn: document.querySelector('.wpcf7-submit'),
+  formWrappers: document.querySelectorAll('.wpcf7'),
+  // formSubmitBtn: document.querySelector('.wpcf7-submit'),
+
   observerSections: document.querySelectorAll('section[id]'),
   overlay: document.querySelector('[data-overlay]'),
   modals: [...document.querySelectorAll('[data-popup]')],
   modalsButton: [...document.querySelectorAll('[data-btn-modal]')],
-  marqueeSlider: document.querySelector('.marquee-section .swiper-container')
+  marqueeSlider: document.querySelector('.marquee-section .swiper-container'),
+  innerButtonModal: [...document.querySelectorAll('[data-order-name]')]
 });
 
 /***/ }),
@@ -124,6 +129,36 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init();
 
 /***/ }),
 
+/***/ "./source/js/components/currentModal.js":
+/*!**********************************************!*\
+  !*** ./source/js/components/currentModal.js ***!
+  \**********************************************/
+/***/ (function() {
+
+// Находим модальное окно
+const modal = document.querySelector('[data-popup="order"]');
+const options = modal.querySelectorAll('option');
+
+// Получаем все кнопки инициализации модального окна
+const modalInitBtns = document.querySelectorAll('[data-order-name]');
+const optionsValues = [];
+const orderNames = [];
+modalInitBtns.forEach(btn => {
+  // Получаем значение атрибута data-order-name текущего элемента и добавляем его в массив
+  const orderName = btn.getAttribute('data-order-name');
+  orderNames.push(orderName);
+});
+options.forEach(option => {
+  const value = option.value;
+  optionsValues.push(value);
+});
+
+// Выводим массив значений в консоль
+console.log(optionsValues);
+console.log(orderNames);
+
+/***/ }),
+
 /***/ "./source/js/components/dinamicHeight.js":
 /*!***********************************************!*\
   !*** ./source/js/components/dinamicHeight.js ***!
@@ -158,34 +193,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const {
-  formSubmitBtn,
-  formWrapper,
+  formWrappers,
   activeMode,
   activeClass
 } = _vars__WEBPACK_IMPORTED_MODULE_1__["default"];
-function toggleLoader() {
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loader');
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loaded');
-}
-if (formWrapper && formSubmitBtn) {
-  formSubmitBtn.addEventListener('click', function () {
-    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loaded');
-    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.addCustomClass)(formWrapper, 'loader');
-  });
-  formWrapper.addEventListener('wpcf7invalid', function (event) {
-    setTimeout(function () {
-      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.addCustomClass)(formWrapper, 'loaded');
-    }, 1500);
-  }, false);
-  formWrapper.addEventListener('wpcf7mailsent', function (event) {
-    (0,_modals__WEBPACK_IMPORTED_MODULE_2__.modalClickHandler)('done', activeClass, activeMode);
-    toggleLoader();
-  }, false);
-  formWrapper.addEventListener('wpcf7mailfailed', function (event) {
-    (0,_modals__WEBPACK_IMPORTED_MODULE_2__.modalClickHandler)('error', activeClass, activeMode);
-    toggleLoader();
-  }, false);
-}
+formWrappers.forEach(formWrapper => {
+  const formSubmitBtn = formWrapper.querySelector('.main-form__btn');
+  if (formWrapper && formSubmitBtn) {
+    formSubmitBtn.addEventListener('click', function () {
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loaded');
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.addCustomClass)(formWrapper, 'loader');
+    });
+    formWrapper.addEventListener('wpcf7invalid', function (event) {
+      setTimeout(function () {
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.addCustomClass)(formWrapper, 'loaded');
+      }, 1500);
+    }, false);
+    formWrapper.addEventListener('wpcf7mailsent', function (event) {
+      (0,_modals__WEBPACK_IMPORTED_MODULE_2__.modalClickHandler)('done', activeClass, activeMode);
+      const modalAttr = formWrapper.closest("[data-popup]").dataset.popup;
+
+      // if(modalAttr) {
+      // 	const curentModal = document.querySelector(`[data-popup="${modalAttr}"]`);
+      // 	removeCustomClass(curentModal, 'active');
+      // 	fadeOut(curentModal, 100);
+      // }
+
+      setTimeout(function () {
+        (0,_modals__WEBPACK_IMPORTED_MODULE_2__.commonFunction)();
+      }, 5000);
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loader');
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loaded');
+    }, false);
+    formWrapper.addEventListener('wpcf7mailfailed', function (event) {
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loader');
+      (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_0__.removeCustomClass)(formWrapper, 'loaded');
+    }, false);
+  }
+});
 
 // Получаем все поля ввода на странице
 const inputs = document.querySelectorAll('input[type="tel"]');
@@ -216,41 +261,27 @@ inputs.forEach(input => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/disable-scroll */ "./source/js/functions/disable-scroll.js");
-/* harmony import */ var _functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll */ "./source/js/functions/enable-scroll.js");
-/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_vars */ "./source/js/_vars.js");
-/* harmony import */ var _functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/customFunctions */ "./source/js/functions/customFunctions.js");
-
-
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./source/js/_vars.js");
+/* harmony import */ var _functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/customFunctions */ "./source/js/functions/customFunctions.js");
 
 
 const {
-  overlay,
-  burger,
   mobileMenu,
-  header,
   anchorLinks,
   activeClass
-} = _vars__WEBPACK_IMPORTED_MODULE_2__["default"];
+} = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
 window.addEventListener('DOMContentLoaded', function () {
   anchorLinks.forEach(function (item) {
     item.addEventListener('click', function (e) {
       let clickValue = item.getAttribute('href');
       if (!document.body.classList.contains('home')) {
         window.location.href = `${window.location.origin}/${clickValue}`;
-        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(mobileMenu, activeClass);
-        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(burger, activeClass);
-        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeClass);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeCustomClass)(mobileMenu, activeClass);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeClassInArray)(burger, activeClass);
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeCustomClass)(overlay, activeClass);
       }
     });
   });
-  if (overlay) {
-    overlay.addEventListener('click', function (e) {
-      if (e.target.classList.contains('overlay')) {
-        hideMenuHandler(overlay, mobileMenu, burger);
-      }
-    });
-  }
 });
 
 /***/ }),
@@ -325,6 +356,7 @@ if (overlay) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   commonFunction: function() { return /* binding */ commonFunction; },
 /* harmony export */   modalClickHandler: function() { return /* binding */ modalClickHandler; }
 /* harmony export */ });
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./source/js/_vars.js");
@@ -339,9 +371,14 @@ function modalClickHandler(attribute, activeClass) {
   let overlayClass = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : activeClass;
   const curentModal = overlay.querySelector(`[data-popup="${attribute}"]`);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, overlayClass);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
-  (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 200);
+  modals.forEach(modal => {
+    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeOut)(modal, 300);
+  });
+  setTimeout(function () {
+    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(overlay, overlayClass);
+    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.addCustomClass)(curentModal, activeClass);
+    (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeIn)(curentModal, 500);
+  }, 300);
   (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_1__.disableScroll)();
   innerButton = overlay.querySelector(`${"[data-popup]"}.${activeClass} .close`);
 }
@@ -352,14 +389,16 @@ const {
   modals,
   modalsButton,
   activeMode,
-  burger
+  burger,
+  innerButtonModal
 } = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
 let innerButton;
 const commonFunction = function () {
+  let duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 300;
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeMode);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeCustomClass)(overlay, activeClass);
   (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.removeClassInArray)(modals, activeClass);
-  modals.forEach(modal => (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeOut)(modal, 300));
+  modals.forEach(modal => (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_3__.fadeOut)(modal, duration));
   (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_2__.enableScroll)();
 };
 function findAttribute(element, attributeName) {
@@ -398,6 +437,14 @@ function modalInit(buttonsArray, buttonAttribute, activeClass) {
       buttonClickHandler(e, buttonAttribute, activeClass);
       if (btn.dataset.orderName) {
         const form = document.querySelector(`[data-popup="${btn.getAttribute(buttonAttribute)}"] .main-form`);
+        const formSelect = form.querySelector('select');
+        for (let i = 0; i < formSelect.options.length; i++) {
+          console.log();
+          if (formSelect.options[i].value === btn.dataset.orderName) {
+            formSelect.selectedIndex = i;
+            break;
+          }
+        }
         if (form) {
           let hiddenInput = form.querySelector('input[name="form_name"]');
           if (!hiddenInput) {
@@ -416,6 +463,33 @@ overlay && overlay.addEventListener("click", function (e) {
   overlayClickHandler(e, activeClass);
 });
 modalInit(modalsButton, "data-btn-modal", activeClass);
+
+// innerButtonModal &&
+//   innerButtonModal.forEach(function (btn) {
+//     btn.addEventListener("click", function (e) {
+//       enableScroll();
+//       e.preventDefault();
+
+//       const prevId = findAttribute(this.closest("[data-popup]"), "data-popup");
+//       if (!prevId) {
+//         return;
+//       }
+
+//       const currentModalId = this.getAttribute("data-btn-inner");
+//       const currentModal = overlay.querySelector(
+//         `[data-popup="${currentModalId}"]`
+//       );
+//       removeClassInArray(modals, activeClass);
+//       addCustomClass(overlay, activeClass);
+//       fadeOut(document.querySelector(`[data-popup="${prevId}"]`), 0);
+//       fadeIn(currentModal, 200);
+//       addCustomClass(currentModal, activeClass);
+//       disableScroll();
+//       innerButton = overlay.querySelector(
+//         `${"[data-popup]"}.${activeClass} .close`
+//       );
+//     });
+//   });
 
 /***/ }),
 

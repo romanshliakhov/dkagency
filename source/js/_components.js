@@ -7,6 +7,7 @@ import './components/observer';
 import './components/form';
 import './components/modals';
 import './components/homeLocation';
+import './components/currentModal';
 
 
 
