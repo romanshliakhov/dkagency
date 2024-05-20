@@ -2845,7 +2845,7 @@ fieldset {
 }
 .services-section__aside {
   position: sticky;
-  top: 30px;
+  top: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   display: -webkit-box;
