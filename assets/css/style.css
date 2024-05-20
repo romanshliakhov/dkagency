@@ -2022,6 +2022,7 @@ fieldset {
   --select-icon: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.3033 1.75736C11.5962 1.46447 11.5962 0.989593 11.3033 0.696699C11.0104 0.403806 10.5355 0.403806 10.2426 0.696699L6 4.93934L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989592 0.403806 1.46447 0.696699 1.75736L5.46967 6.53033ZM5.25 5L5.25 6L6.75 6L6.75 5L5.25 5Z' fill='black' /%3E%3C/svg%3E");
   --contacts-page-left-decor: url("data:image/svg+xml,%3Csvg width='98' height='92' viewBox='0 0 98 92' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.83203 2.60413C2.83203 15.8515 11.5311 30.4747 20.7862 39.7298C34.3804 53.3239 45.4992 65.0193 63.0851 73.8123C72.0794 78.3095 82.2156 82.0013 90.4729 87.5062' stroke='%230E2943' stroke-width='5' stroke-linecap='round' /%3E%3Cpath d='M83.0808 60.9114C83.0808 68.9173 90.9767 80.3483 94.3747 87.4275C96.2602 91.3556 89.9231 87.7251 87.5616 87.4889C78.3776 86.5705 71.5126 86.8935 62.0889 88.5324' stroke='%230E2943' stroke-width='5' stroke-linecap='square' /%3E%3C/svg%3E");
   --contacts-page-right-decor: url("data:image/svg+xml,%3Csvg width='98' height='93' viewBox='0 0 98 93' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M94.8882 89.6398C94.8882 76.3924 86.1891 61.7692 76.934 52.5141C63.3399 38.92 52.221 27.2245 34.6351 18.4316C25.6408 13.9344 15.5047 10.2426 7.24732 4.73769' stroke='%230E2943' stroke-width='5' stroke-linecap='round' /%3E%3Cpath d='M14.6394 31.3325C14.6394 23.3266 6.74352 11.8956 3.34547 4.81637C1.46 0.888297 7.79714 4.51883 10.1587 4.75499C19.3426 5.67338 26.2076 5.35045 35.6313 3.71153' stroke='%230E2943' stroke-width='5' stroke-linecap='square' /%3E%3C/svg%3E");
+  --frame-decor: url("data:image/svg+xml,%3Csvg width='272' height='309' viewBox='0 0 272 309' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M209.969 1.87061C226.14 1.87061 244.871 3.37167 256.948 15.8108C268.289 27.4921 273.328 47.6554 269.519 63.579C261.235 98.2142 216.348 100.876 188.073 101.124C168.961 101.293 149.96 103.355 130.869 103.355C103.168 103.355 76.8178 105.812 49.4827 111.161C37.9096 113.426 16.773 118.467 10.6244 130.43C3.88424 143.543 1 153.765 1 168.471C1 179.106 1.82886 186.64 7.25583 195.67C12.5513 204.48 23.6832 211.14 32.9408 214.318C72.0572 227.748 115.202 223.839 155.23 232.719C189.828 240.395 236.62 245.445 258.03 279.372C262.794 286.922 263.684 314.377 259.775 306.323' stroke='%230E2943' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M256.089 300.197C256.204 301.378 257.382 303.122 257.99 304.124C258.638 305.192 258.909 306.557 259.797 307.472C260.607 308.306 261.486 308.1 262.425 307.327C265.534 304.765 267.662 301.155 270.873 298.674' stroke='%230E2943' stroke-width='2' stroke-linecap='round' /%3E%3C/svg%3E");
 }
 
 .btn {
@@ -2594,7 +2595,7 @@ fieldset {
 
 .hero-section {
   position: relative;
-  height: 65svh;
+  height: 80svh;
   width: 100%;
   overflow: hidden;
 }
@@ -2608,6 +2609,126 @@ fieldset {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+.hero-section__wrapp {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+  height: clamp(490px, 79.688vw, 612px);
+  width: clamp(350px, 58.073vw, 446px);
+}
+.hero-section__frame {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.hero-section__frame picture,
+.hero-section__frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.hero-section__box {
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  padding: clamp(35px, 5.99vw, 46px) clamp(35px, 6.25vw, 48px) clamp(60px, 12.5vw, 96px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.hero-section__box-top {
+  width: 100%;
+  position: relative;
+  font-size: clamp(20px, 2.865vw, 22px);
+  line-height: 140%;
+  font-weight: 500;
+  color: rgba(var(--cl-d), 1);
+  text-align: center;
+}
+.hero-section__box-top::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  background-image: var(--frame-decor);
+  background-position: center;
+  background-size: cover;
+  width: clamp(235px, 35.417vw, 272px);
+  height: clamp(268px, 40.234vw, 309px);
+}
+.hero-section__box-bottom {
+  font-size: clamp(21px, 3.255vw, 25px);
+  line-height: 110%;
+  font-weight: 700;
+  color: rgba(var(--cl-d), 1);
+  text-align: center;
+}
+.hero-section__box-dev {
+  position: absolute;
+  top: clamp(100px, 15.755vw, 121px);
+  left: clamp(35px, 6.25vw, 48px);
+  font-size: clamp(26px, 3.906vw, 30px);
+  line-height: 120%;
+  font-weight: 700;
+  color: rgba(var(--bg-d), 1);
+  text-transform: uppercase;
+}
+.hero-section__box-socials {
+  position: absolute;
+  top: clamp(200px, 30.339vw, 233px);
+  right: clamp(35px, 6.25vw, 48px);
+  font-size: clamp(26px, 3.906vw, 30px);
+  line-height: 120%;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right;
+  color: rgba(var(--cl-e), 1);
+}
+.hero-section__box-socials span:first-child {
+  color: #1f71d1;
+}
+.hero-section__box-socials span:last-child {
+  color: #116f60;
+}
+.hero-section__box-marketing {
+  position: absolute;
+  left: clamp(35px, 6.25vw, 48px);
+  bottom: clamp(145px, 29.036vw, 223px);
+  font-size: clamp(26px, 3.906vw, 30px);
+  line-height: 110%;
+  font-weight: 700;
+  color: rgba(var(--cl-e), 1);
+  text-transform: uppercase;
+}
+.hero-section__box-seo {
+  position: absolute;
+  right: clamp(55px, 10.417vw, 80px);
+  bottom: clamp(100px, 19.141vw, 147px);
+  font-size: clamp(30px, 4.557vw, 35px);
+  line-height: 110%;
+  font-weight: 700;
+  color: rgba(var(--bg-d), 1);
+  text-transform: uppercase;
 }
 
 .marquee-section {

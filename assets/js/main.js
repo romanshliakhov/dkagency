@@ -464,33 +464,6 @@ overlay && overlay.addEventListener("click", function (e) {
 });
 modalInit(modalsButton, "data-btn-modal", activeClass);
 
-// innerButtonModal &&
-//   innerButtonModal.forEach(function (btn) {
-//     btn.addEventListener("click", function (e) {
-//       enableScroll();
-//       e.preventDefault();
-
-//       const prevId = findAttribute(this.closest("[data-popup]"), "data-popup");
-//       if (!prevId) {
-//         return;
-//       }
-
-//       const currentModalId = this.getAttribute("data-btn-inner");
-//       const currentModal = overlay.querySelector(
-//         `[data-popup="${currentModalId}"]`
-//       );
-//       removeClassInArray(modals, activeClass);
-//       addCustomClass(overlay, activeClass);
-//       fadeOut(document.querySelector(`[data-popup="${prevId}"]`), 0);
-//       fadeIn(currentModal, 200);
-//       addCustomClass(currentModal, activeClass);
-//       disableScroll();
-//       innerButton = overlay.querySelector(
-//         `${"[data-popup]"}.${activeClass} .close`
-//       );
-//     });
-//   });
-
 /***/ }),
 
 /***/ "./source/js/components/observer.js":
