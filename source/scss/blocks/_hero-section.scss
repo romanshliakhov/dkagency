@@ -19,7 +19,7 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
-        height: clamp(490px, 79.688vw, 612px);
+        height: clamp(495px, 79.688vw, 612px);
         width: clamp(350px, 58.073vw, 446px);
     }
 
@@ -42,7 +42,7 @@
         height: 100%;
         position: relative;
         z-index: 2;
-        padding: clamp(35px, 5.99vw, 46px) clamp(35px, 6.25vw, 48px) clamp(60px, 12.5vw, 96px);
+        padding: clamp(25px, 5.729vw, 44px) clamp(35px, 6.25vw, 48px) clamp(65px, 12.5vw, 96px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -51,8 +51,8 @@
         &-top {
             width: 100%;
             position: relative;
-            font-size: clamp(20px, 2.865vw, 22px);
-            line-height: 140%;
+            font-size: clamp(26px, 3.906vw, 30px);
+            line-height: 130%;
             font-weight: 500;
             color: rgba(var(--cl-d),1.0);
             text-align: center;
@@ -61,11 +61,12 @@
                 content: '';
                 position: absolute;
                 top: 100%;
+                right: clamp(20px, 3.906vw, 30px);
                 background-image: var(--frame-decor);
                 background-position: center;
                 background-size: cover;
-                width: clamp(235px, 35.417vw, 272px);
-                height: clamp(268px, 40.234vw, 309px);
+                width: clamp(205px, 32.031vw, 246px);
+                height: clamp(287px, 44.922vw, 345px);
             }
         }
 
@@ -79,7 +80,7 @@
 
         &-dev {
             position: absolute;
-            top: clamp(100px, 15.755vw, 121px);
+            top: clamp(100px, 18.359vw, 141px);
             left: clamp(35px, 6.25vw, 48px);
             font-size: clamp(26px, 3.906vw, 30px);
             line-height: 120%;
@@ -90,7 +91,7 @@
 
         &-socials {
             position: absolute;
-            top: clamp(200px, 30.339vw, 233px);
+            top: clamp(200px, 33.203vw, 255px);
             right: clamp(35px, 6.25vw, 48px);
             font-size: clamp(26px, 3.906vw, 30px);
             line-height: 120%;
@@ -111,7 +112,7 @@
         &-marketing {
             position: absolute;
             left: clamp(35px, 6.25vw, 48px);
-            bottom: clamp(145px, 29.036vw, 223px);
+            bottom: clamp(155px, 27.734vw, 213px);
             font-size: clamp(26px, 3.906vw, 30px);
             line-height: 110%;
             font-weight: 700;
@@ -121,8 +122,8 @@
 
         &-seo {
             position: absolute;
-            right: clamp(55px, 10.417vw, 80px);
-            bottom: clamp(100px, 19.141vw, 147px);
+            right: clamp(35px, 6.25vw, 48px);
+            bottom: clamp(110px, 20.052vw, 145px);
             font-size: clamp(30px, 4.557vw, 35px);
             line-height: 110%;
             font-weight: 700;
