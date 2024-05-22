@@ -19,7 +19,7 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
-        height: clamp(495px, 79.688vw, 612px);
+        height: clamp(495px, 80.859vw, 621px);
         width: clamp(350px, 58.073vw, 446px);
     }
 
@@ -42,7 +42,7 @@
         height: 100%;
         position: relative;
         z-index: 2;
-        padding: clamp(25px, 5.729vw, 44px) clamp(35px, 6.25vw, 48px) clamp(65px, 12.5vw, 96px);
+        padding: clamp(25px, 5.729vw, 44px) clamp(35px, 6.25vw, 48px) clamp(65px, 12.37vw, 95px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -60,13 +60,14 @@
             &::before {
                 content: '';
                 position: absolute;
+                margin-top: 15px;
                 top: 100%;
-                right: clamp(20px, 3.906vw, 30px);
+                right: 30px;
                 background-image: var(--frame-decor);
                 background-position: center;
                 background-size: cover;
-                width: clamp(205px, 32.031vw, 246px);
-                height: clamp(287px, 44.922vw, 345px);
+                width: clamp(188px, 32.292vw, 248px);
+                height: clamp(260px, 44.531vw, 342px);
             }
         }
 
